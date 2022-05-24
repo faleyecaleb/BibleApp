@@ -1,14 +1,17 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import { Text, View, SafeAreaView, FlatList } from 'react-native'
+import WeeksCard from '../components/WeeksCard'
 
-export class HomeScreen extends Component {
-  render() {
-    return (
+const dataList = ['Week One', 'Week Two', 'Week Three', 'Week Four', 'Week Five', 'Week Six', 'Week Seven', 'Week Eight', 'Week Nine', 'Week Ten']
+
+const HomeScreen = () => {
+  return(
+    <SafeAreaView>
       <View>
-        <Text>HomeScreen</Text>
+        
       </View>
-    )
-  }
+      <FlatList data={dataList} renderItem={(data) => <WeeksCard />} />
+    </SafeAreaView>
+  )
 }
 
 export default HomeScreen
