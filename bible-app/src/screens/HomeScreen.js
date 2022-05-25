@@ -34,19 +34,22 @@ const style = StyleSheet.create({
   },
 
   searchContainer: {
-    
+    backgroundColor: COLORS.gradientLight,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    marginBottom: 10,
+
 
   },
 
   input: {
-    color: COLORS.white, 
+    color: COLORS.dark, 
     fontSize: 16, 
     borderColor: COLORS.white,
-    backgroundColor: COLORS.gradientLight,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    elevation: 10
+    backgroundColor: COLORS.white,
+    borderRadius: 5,
+    paddingHorizontal: 5,
+    paddingVertical: 5,
   }
 })
 
