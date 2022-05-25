@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
-import COLORS from '../theme/colors'
-
+import COLORS from '../consts/colors'
 const WeeksCard = ({navigation, card}) => {
   return (
     <View style={{flex: 1, paddingHorizontal: 10, backgroundColor: COLORS.gradientDark}}>

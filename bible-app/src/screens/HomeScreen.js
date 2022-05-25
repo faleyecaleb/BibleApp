@@ -1,6 +1,7 @@
 import { Text, View, SafeAreaView, StatusBar, FlatList, StyleSheet, TextInput, } from 'react-native'
-import WeeksCard from '../components/WeeksCard'
-import COLORS from '../theme/colors';
+import WeeksCard from '../components/WeeksCard';
+import COLORS from '../consts/colors';
+
 
 const dataList = ['Week One', 'Week Two', 'Week Three', 'Week Four', 'Week Five', 'Week Six', 'Week Seven', 'Week Eight', 'Week Nine', 'Week Ten', 'djkslf', 'ksljdfs', 'dksd']
 
@@ -36,8 +37,8 @@ const style = StyleSheet.create({
   searchContainer: {
     backgroundColor: COLORS.gradientLight,
     paddingVertical: 10,
-    paddingHorizontal: 5,
-    marginBottom: 10,
+    paddingHorizontal: 10,
+    marginBottom: 5,
 
 
   },
