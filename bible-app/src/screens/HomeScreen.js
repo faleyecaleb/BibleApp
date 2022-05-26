@@ -7,13 +7,6 @@ import COLORS from '../consts/colors';
 const dataList = ['Week One', 'Week Two', 'Week Three', 'Week Four', 'Week Five', 'Week Six', 'Week Seven', 'Week Eight', 'Week Nine', 'Week Ten', 'djkslf', 'ksljdfs', 'dksd']
 
 const HomeScreen = ({navigation}) => {
-  const [allUser, setAllUser] = useState(dataList);
-  const [filteredUser, setFilteredUser] = useState(dataList)
-
-  const searchUser = (text) => {
-    const newFilteredUser = filteredUser.filter((user) => user.includes(text))
-    setFilteredUser([newFilteredUser])
-  }
 
   return(
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.gradientDark}}>
@@ -25,10 +18,10 @@ const HomeScreen = ({navigation}) => {
         
         <TextInput 
         placeholder='Search by book name...'
-        style={style.input} onChangeText={(text) => searchUser(text)} />
+        style={style.input}  />
       </View>
 
-      <FlatList data={filteredUser} renderItem={(data) => <WeeksCard card={data} navigation={navigation} />} />
+      <FlatList data={dataList} renderItem={(content) => <WeeksCard card={content.item} navigation={navigation} />} />
     </SafeAreaView>
   )
 }
