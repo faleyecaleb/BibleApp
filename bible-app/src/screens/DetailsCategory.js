@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, StatusBar,ImageBackground, Dimensions, SafeAreaView, Image, FlatList, } from 'react-native'
+import { View, Text, StyleSheet, StatusBar,ImageBackground, TouchableOpacity, Dimensions, SafeAreaView, Image, FlatList, } from 'react-native'
 import React from 'react';
 import IMAGES from '../../src/consts/images'
 import COLORS from '../consts/colors';
@@ -28,7 +28,9 @@ const DetailsCategory = ({navigation, route}) => {
             <Text style={{fontSize: width * 0.045}}>Theme:</Text>
             <Text style={{fontSize: width * 0.05, fontWeight: 'bold'}}>know Your Bible Better</Text>
           </View>
-          <Icon name='arrow-back' size={width * 0.05 && height * 0.05} />
+          <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
+            <Icon name='arrow-back' size={width * 0.05 && height * 0.05} />
+          </TouchableOpacity>
         </View>
 
         <View>
@@ -38,9 +40,6 @@ const DetailsCategory = ({navigation, route}) => {
               </View>
           </ImageBackground>
         </View>
-        {/* <FlatList numColumns={2} contentContainerStyle={{justifyContent: 'space-between', flexDirection: 'row'}} data={iconList} renderItem={(name) => (
-          <DetailsCard icon={name.item.name} title={name.item.title} />
-        )} /> */}
 
         <View style={{marginVertical: height * 0.016}}>
           <Text style={{fontSize: width * 0.05, fontWeight: 'bold'}}>An Overview Of The Book Of Genesis</Text>

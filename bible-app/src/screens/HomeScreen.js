@@ -8,7 +8,7 @@ const dataList = ['Week One', 'Week Two', 'Week Three', 'Week Four', 'Week Five'
 const HomeScreen = ({navigation}) => {
   return(
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.gradientDark}}>
-      <StatusBar animated={true} backgroundColor={COLORS.gradientDark} barStyle='dark-content' />
+      <StatusBar animated={true} translucent={false} backgroundColor={COLORS.gradientDark} barStyle='dark-content' />
       <View style={style.header}>
         <Text style={{fontSize: 18, fontWeight: 'bold', color: COLORS.white}}>Table Of Contents</Text>
       </View>
