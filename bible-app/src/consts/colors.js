@@ -6,7 +6,7 @@ const COLORS = {
   blue: '#5f82e6',
   red: 'red',
   transparent: 'rgba(0,0,0,0)',
-  gradientDark: 'rgb(103, 52, 0)',
+  gradientDark: 'rgb(103, 52, 25)',
   gradientLight: 'rgb(181, 101, 29)'
 }
 
