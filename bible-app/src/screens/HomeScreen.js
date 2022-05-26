@@ -1,4 +1,5 @@
 import { Text, View, SafeAreaView, StatusBar, FlatList, StyleSheet, TextInput, } from 'react-native'
+import { useState } from 'react';
 import WeeksCard from '../components/WeeksCard';
 import COLORS from '../consts/colors';
 
@@ -6,6 +7,14 @@ import COLORS from '../consts/colors';
 const dataList = ['Week One', 'Week Two', 'Week Three', 'Week Four', 'Week Five', 'Week Six', 'Week Seven', 'Week Eight', 'Week Nine', 'Week Ten', 'djkslf', 'ksljdfs', 'dksd']
 
 const HomeScreen = ({navigation}) => {
+  const [allUser, setAllUser] = useState(dataList);
+  const [filteredUser, setFilteredUser] = useState(dataList)
+
+  const searchUser = (text) => {
+    const newFilteredUser = filteredUser.filter((user) => user.includes(text))
+    setFilteredUser([newFilteredUser])
+  }
+
   return(
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.gradientDark}}>
       <StatusBar animated={true} translucent={false} backgroundColor={COLORS.gradientDark} barStyle='dark-content' />
@@ -16,10 +25,10 @@ const HomeScreen = ({navigation}) => {
         
         <TextInput 
         placeholder='Search by book name...'
-        style={style.input} />
+        style={style.input} onChangeText={(text) => searchUser(text)} />
       </View>
 
-      <FlatList data={dataList} renderItem={(data) => <WeeksCard card={data.item} navigation={navigation} />} />
+      <FlatList data={filteredUser} renderItem={(data) => <WeeksCard card={data} navigation={navigation} />} />
     </SafeAreaView>
   )
 }
