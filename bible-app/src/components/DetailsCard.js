@@ -9,13 +9,12 @@ const width = Dimensions.get('window').width;
 const DetailsCard = ({icon, title, nav}) => {
   return (
     <SafeAreaView>
-      <TouchableOpacity onPress={() => nav.navigate('Discussion', title)}  style={style.button}>
+      <View style={style.button}>
         <View style={style.detailsCardContainer}>
           <Icon name={icon} size={44} color={COLORS.white} />
           <Text style={{color: COLORS.white}}>{title}</Text>
-          {/* <Button title=''>Click Here</Button> */}
         </View>
-      </TouchableOpacity>
+      </View>
     </SafeAreaView>
   )
 }

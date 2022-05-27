@@ -2,11 +2,14 @@ const weekOne = {
   name: 'Week One',
   title: 'An Overview Of The Book Of Genesis',
   introduction: {
+    title: 'An Overview Of The Book Of Genesis',
     name: 'Introduction',
     content: `How do you think the world would look like without the book of Genesis that gives historical validity to the beginning of all things? The world would have been without any accurate record of the creations. The book of Genesis gives the historical accuracy to creation story. God in the book of Genesis proffered solution to the problem of the beginning of all things which science could not give a satisfactory answer. The book of Genesis remains the source. To modern readers, the book of Genesis might appear to be a strange book, beginning, as it does, with God and creation, and ending with Joseph in a coffin in Egypt (50:26)! Indeed, In the beginning, both serves its title, and is suggestive as to what the book is all about. In other words, it tells of the beginning of God's story, creation, human disobedience and divine redemption. It is also the first book of the Pentateuch, and serves as an introduction to the entire Bible, the story of God, choosing and making a covenant with a people through whom He would reach all people (12:2-3).
     The first Hebrew word used in the Book, Bereshith is also used as the title However, the English Bible uses the word "Genesis, which is the Greek translation of the Original Hebrew word. Genesis is a title that reflects what we find in the entire book, for it means "the origin, source or Creation." Obviously, the entire history took place before Moses birth. His role in werfting Genesis would be said to be mainly under the influence of the Holy Spirit to carefully fit together all the available written and oral accounts that we now have present in Genesis.`
   },
   discussion: {
+    title: 'An Overview Of The Book Of Genesis',
+    name: 'Discussion',
     partOne: {
       name: 'THE PRIMEVAL HISTORY OF MANKIND (Chaps. 1-11)',
       content: `An overview of the history of mankind from Adam to Abraham, expressed in the record of 5 major events. 1. Creation: God created all things including Adam and Eve (Chaps. I2). 
@@ -46,13 +49,15 @@ const weekOne = {
   },
 
   conclusion: {
+    title: 'An Overview Of The Book Of Genesis',
     name: 'Conclusion',
     content: `Genesis does not only deal with origins, but also with the ultimate question of life: where did our Universe come from? Why are we here? Why do we have to die? These are thought-provoking questions which the mortal man cannot answer, be it scientists, philosophers or astrologers. 
     
     The only person who could really answer these questions for us is God Himself. Without the book of Genesis, our knowledge of a creating God would be pitifully limited and would be woefully ignorant of the beginning of our universe. Through Genesis, God is teaching us that He is the Creator and that He desires relationship with His people. People are special to God and unique. And above all, no matter the situation and no matter the depth of your sin, God loves and wants to use you in His plan. What was the cost in Eden, Genesis 3, is restored to us in Christ Jesus Romans 5:12. He alone is worthy for us to be an extension of His kingdom on earth.Just like the nation Israel was set apart to carry out God's purpose to the world, would you be faithful to carry out God's purpose on Earth?`
   },
 
-  prayer: {
+  prayers: {
+    title: 'An Overview Of The Book Of Genesis',
     name: 'Prayer Points',
     content: `PRAYER POINTS
 

@@ -4,6 +4,27 @@ import WeeksCard from '../components/WeeksCard';
 import COLORS from '../consts/colors';
 import BOOKPAGE from '../bookData/book';
 
+const dataList = [
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+  'Week One',
+]
+
 const HomeScreen = ({navigation}) => {
 
 
@@ -20,7 +41,7 @@ const HomeScreen = ({navigation}) => {
         style={style.input}  />
       </View>
 
-      <FlatList data={BOOKPAGE} renderItem={(content) => <WeeksCard card={content.item} navigation={navigation} />} />
+      <FlatList data={BOOKPAGE} renderItem={(content) => <WeeksCard books={content.item} card={content.item} navigation={navigation} />} />
     </SafeAreaView>
   )
 }

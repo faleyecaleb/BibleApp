@@ -10,7 +10,7 @@ const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
 const DetailsCategory = ({navigation, route}) => {
-  const data = route.params;
+  const books = route.params;
   const iconList = [
     {name: 'info', title: 'Introduction'},
     {name: 'user', title: 'Discussion'},
@@ -37,23 +37,36 @@ const DetailsCategory = ({navigation, route}) => {
           <View>
             <ImageBackground source={IMAGES.img2} style={style.backgroundImage}>
                 <View style={style.imageTextContainer}>
-                  <Text style={{color: COLORS.white, fontSize: width * 0.06, fontWeight: 'bold', fontFamily: 'Roboto'}}>{data}</Text>
+                  <Text style={{color: COLORS.white, fontSize: width * 0.06, fontWeight: 'bold', fontFamily: 'Roboto'}}>{books.title}</Text>
                 </View>
             </ImageBackground>
           </View>
 
           <View style={{marginVertical: height * 0.016}}>
-            <Text style={{fontSize: width * 0.05, fontWeight: 'bold'}}>An Overview Of The Book Of Genesis</Text>
+            <Text style={{fontSize: width * 0.05, fontWeight: 'bold'}}>{}</Text>
           </View>
 
           <View style={style.detailsCardContainer}>
             <View style={style.detailsCard}>
-              <DetailsCard nav={navigation} icon={iconList[0].name} title={iconList[0].title} />
-              <DetailsCard nav={navigation} icon={iconList[1].name} title={iconList[1].title} />
+              <TouchableOpacity onPress={() => navigation.navigate('Discussion', books.introduction)}>
+                <DetailsCard  icon={iconList[0].name} title={iconList[0].title} />
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => navigation.navigate('Discussion', books.discussion)} >
+                <DetailsCard nav={navigation} icon={iconList[1].name} title={iconList[1].title} />
+              </TouchableOpacity>
+
             </View>
+
             <View style={style.detailsCard}>
-              <DetailsCard nav={navigation}  icon={iconList[2].name} title={iconList[2].title} />
-              <DetailsCard nav={navigation} icon={iconList[3].name} title={iconList[3].title} />
+              <TouchableOpacity onPress={() => navigation.navigate('Discussion', books.conclusion)} >
+                <DetailsCard nav={navigation}  icon={iconList[2].name} title={iconList[2].title} />
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => navigation.navigate('Discussion', books.prayers)} >
+                <DetailsCard nav={navigation} icon={iconList[3].name} title={iconList[3].title} />
+              </TouchableOpacity>
+              
             </View>
           </View>
 
