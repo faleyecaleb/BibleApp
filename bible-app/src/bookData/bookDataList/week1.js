@@ -9,19 +9,13 @@ const weekOne = {
   discussion: {
     partOne: {
       name: 'THE PRIMEVAL HISTORY OF MANKIND (Chaps. 1-11)',
-      content: `An overview of the history of mankind from Adam
-
-      to Abraham,
+      content: `An overview of the history of mankind from Adam to Abraham, expressed in the record of 5 major events. 1. Creation: God created all things including Adam and Eve (Chaps. I2). 
       
-      expressed in the record of 5 major events. 1. Creation: God created all things including Adam and Eve (Chaps. I
-      
-      2). 2. The "Fall" (3:1ff): Mankind's original disobedience towards God that brought evil in the world.
+2. The "Fall" (3:1ff): Mankind's original disobedience towards God that brought evil in the world.
       
       3. Cain and Abel (Chaps. 4-5): The tragedy that occurred between these two, set in motion two basic streams of History. They are humanistic or ungodly civilisation and remnant portion of humanity that would follow God and show others the way to Him. 4. The Great Flood (Chaps. 6-10): The result of the wickedness that had
       
-      pervaded the ancient world by Noah's time. Only righteous Noah and
-      
-      his family were saved.
+      pervaded the ancient world by Noah's time. Only righteous Noah and his family were saved.
       
       5. The Tower of Babel (Chaps. 11): All men on earth joined in rebellion against God. So, God confused their language, and scattered the human race throughout the earth. The different languages as we have them today came because God dealt with the ungodly ambition in man.
       

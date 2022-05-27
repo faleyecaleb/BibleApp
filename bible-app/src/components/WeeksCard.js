@@ -6,7 +6,7 @@ const WeeksCard = ({navigation, card}) => {
     <View style={{flex: 1, paddingHorizontal: 10, backgroundColor: COLORS.gradientDark}}>
       <TouchableOpacity onPress={(e) => navigation.navigate('Details', card)}>
         <View style={style.cardText}>
-          <Text style={style.cardTextPrimary}>{card.item}</Text>
+          <Text style={style.cardTextPrimary}>{card}</Text>
           <Text style={style.cardTextSecondary}>An OverView Of The Book Of Genesis</Text>
         </View>
       </TouchableOpacity>

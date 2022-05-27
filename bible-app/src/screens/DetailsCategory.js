@@ -48,12 +48,12 @@ const DetailsCategory = ({navigation, route}) => {
 
           <View style={style.detailsCardContainer}>
             <View style={style.detailsCard}>
-              <DetailsCard icon={iconList[0].name} title={iconList[0].title} />
-              <DetailsCard icon={iconList[1].name} title={iconList[1].title} />
+              <DetailsCard nav={navigation} icon={iconList[0].name} title={iconList[0].title} />
+              <DetailsCard nav={navigation} icon={iconList[1].name} title={iconList[1].title} />
             </View>
             <View style={style.detailsCard}>
-              <DetailsCard  icon={iconList[2].name} title={iconList[2].title} />
-              <DetailsCard icon={iconList[3].name} title={iconList[3].title} />
+              <DetailsCard nav={navigation}  icon={iconList[2].name} title={iconList[2].title} />
+              <DetailsCard nav={navigation} icon={iconList[3].name} title={iconList[3].title} />
             </View>
           </View>
 

@@ -6,10 +6,10 @@ const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
 
-const DetailsCard = ({icon, title}) => {
+const DetailsCard = ({icon, title, nav}) => {
   return (
     <SafeAreaView>
-      <TouchableOpacity  style={style.button}>
+      <TouchableOpacity onPress={() => nav.navigate('Discussion', title)}  style={style.button}>
         <View style={style.detailsCardContainer}>
           <Icon name={icon} size={44} color={COLORS.white} />
           <Text style={{color: COLORS.white}}>{title}</Text>
