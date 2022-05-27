@@ -2,11 +2,10 @@ import { Text, View, SafeAreaView, StatusBar, FlatList, StyleSheet, TextInput, }
 import { useState } from 'react';
 import WeeksCard from '../components/WeeksCard';
 import COLORS from '../consts/colors';
-
-
-const dataList = ['Week One', 'Week Two', 'Week Three', 'Week Four', 'Week Five', 'Week Six', 'Week Seven', 'Week Eight', 'Week Nine', 'Week Ten', 'djkslf', 'ksljdfs', 'dksd']
+import BOOKPAGE from '../bookData/book';
 
 const HomeScreen = ({navigation}) => {
+
 
   return(
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.gradientDark}}>
@@ -21,7 +20,7 @@ const HomeScreen = ({navigation}) => {
         style={style.input}  />
       </View>
 
-      <FlatList data={dataList} renderItem={(content) => <WeeksCard card={content.item} navigation={navigation} />} />
+      <FlatList data={BOOKPAGE} renderItem={(content) => <WeeksCard card={content.item} navigation={navigation} />} />
     </SafeAreaView>
   )
 }
