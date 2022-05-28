@@ -7,7 +7,6 @@ import { UserContext } from './UserContext';
 
 const Part1 = () => {
   const msg = useContext(UserContext)
-  console.log(msg);
   
   const books = BOOKPAGE;
   const layout = useWindowDimensions()
@@ -17,13 +16,13 @@ const Part1 = () => {
       {msg.partOne ? 
         <ScrollView style={{paddingHorizontal: 8}}>
         
-        <Text style={{fontSize: 16, textAlign: 'left', lineHeight: 27, paddingBottom: 50}}>{msg.partOne.content}</Text>
+        <Text selectable={true} style={{fontSize: 16, textAlign: 'left', lineHeight: 27, paddingBottom: 50}}>{msg.partOne.content}</Text>
       </ScrollView>
 
       :
 
       <ScrollView style={style.text}>
-        <Text style={{fontSize: 16, textAlign: 'left', lineHeight: 35, paddingBottom: 50}}>{msg.content}</Text>
+        <Text selectable={true} style={{fontSize: 16, textAlign: 'left', lineHeight: 35, paddingBottom: 50}}>{msg.content}</Text>
       </ScrollView>
       } 
     </View>

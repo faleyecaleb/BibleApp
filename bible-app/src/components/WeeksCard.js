@@ -6,8 +6,13 @@ const WeeksCard = ({navigation, card, books}) => {
     <View style={{flex: 1, paddingHorizontal: 10, backgroundColor: COLORS.gradientDark}}>
       <TouchableOpacity onPress={(e) => navigation.navigate('Details', card)}>
         <View style={style.cardText}>
-          <Text style={style.cardTextPrimary}>{card.name}</Text>
-          <Text style={style.cardTextSecondary}>An OverView Of The Book Of Genesis</Text>
+          <View style={style.weeksCardNumber}>
+              <Text style={{fontSize: 25, color: COLORS.white}}>{card.number}</Text>
+          </View>
+          <View style={{justifyContent: 'center', alignItems: 'flex-start'}}>
+            <Text style={style.cardTextPrimary}>{card.name}</Text>
+            <Text style={style.cardTextSecondary}>An OverView Of The Book Of Genesis</Text>
+          </View>
         </View>
       </TouchableOpacity>
     </View>
@@ -15,15 +20,23 @@ const WeeksCard = ({navigation, card, books}) => {
 }
 
 const style = StyleSheet.create({
+  weeksCardNumber: {
+    backgroundColor: COLORS.gradientDark,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 10,
+    paddingVertical: 25,
+    width: '10%'
+  },
   cardText: {
     backgroundColor: COLORS.white,
     marginVertical: 10,
     color: COLORS.white,
-    paddingVertical: 25,
     fontSize: 16,
     borderRadius: 5,
-    paddingHorizontal: 15,
+    paddingHorizontal: 4,
     elevation: 10,
+    flexDirection: 'row'
   },
 
   cardTextPrimary: {

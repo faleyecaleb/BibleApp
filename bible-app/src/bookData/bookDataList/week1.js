@@ -1,7 +1,9 @@
 const weekOne = {
   name: 'Week One',
+  number: 1,
   title: 'An Overview Of The Book Of Genesis',
   introduction: {
+    
     title: 'An Overview Of The Book Of Genesis',
     name: 'Introduction',
     content: `How do you think the world would look like without the book of Genesis that gives historical validity to the beginning of all things? The world would have been without any accurate record of the creations. The book of Genesis gives the historical accuracy to creation story. God in the book of Genesis proffered solution to the problem of the beginning of all things which science could not give a satisfactory answer. The book of Genesis remains the source. To modern readers, the book of Genesis might appear to be a strange book, beginning, as it does, with God and creation, and ending with Joseph in a coffin in Egypt (50:26)! Indeed, In the beginning, both serves its title, and is suggestive as to what the book is all about. In other words, it tells of the beginning of God's story, creation, human disobedience and divine redemption. It is also the first book of the Pentateuch, and serves as an introduction to the entire Bible, the story of God, choosing and making a covenant with a people through whom He would reach all people (12:2-3).

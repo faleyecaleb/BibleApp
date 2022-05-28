@@ -3,7 +3,6 @@ import React from 'react';
 import IMAGES from '../../src/consts/images'
 import COLORS from '../consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons'
-// import Icon from 'react-native-vector-icons/FontAwesome5';
 import DetailsCard from '../components/DetailsCard';
 
 const height = Dimensions.get('window').height;

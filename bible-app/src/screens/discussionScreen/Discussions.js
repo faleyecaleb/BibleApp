@@ -1,15 +1,12 @@
 import { View, Text, useWindowDimensions, StyleSheet, SafeAreaView, StatusBar } from 'react-native'
 import React, {useContext} from 'react'
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-// import Part1 from './Part1';
-// import Part2 from './Part2';
+import { UserContext } from '../../screens/discussionScreen/UserContext';
 import COLORS from '../../consts/colors';
 import DiscussionTab from '../../components/DiscussionTab';
-import { UserContext } from './UserContext';
+
 
 export const Discussions = ({navigation, route}) => {
   const [books, setBooks] = React.useState(route.params);
-  const book = useContext(UserContext)
     
 
   return (
@@ -20,7 +17,7 @@ export const Discussions = ({navigation, route}) => {
         <Text style={{color: COLORS.white, fontSize: 15}}>Week 1</Text>
       </View>
 
-      <UserContext.Provider value= {books}>
+      <UserContext.Provider value={books}>
         <DiscussionTab />
       </UserContext.Provider>
     </View>
