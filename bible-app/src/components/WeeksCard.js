@@ -1,10 +1,15 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import COLORS from '../consts/colors'
-const WeeksCard = ({navigation, card, books}) => {
+const WeeksCard = ({navigation, card, books, showSearchHandler}) => {
+
+  const navigationHandler = (e) => {
+    navigation.navigate('Details', card);
+    showSearchHandler(false)
+  }
   return (
     <View style={{flex: 1, paddingHorizontal: 10, backgroundColor: COLORS.gradientDark}}>
-      <TouchableOpacity onPress={(e) => navigation.navigate('Details', card)}>
+      <TouchableOpacity onPress={(e) => navigationHandler(e)}>
         <View style={style.cardText}>
           <View style={style.weeksCardNumber}>
               <Text style={{fontSize: 25, color: COLORS.white}}>{card.number}</Text>

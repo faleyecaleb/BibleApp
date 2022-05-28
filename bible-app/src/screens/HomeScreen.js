@@ -3,6 +3,8 @@ import { useState } from 'react';
 import WeeksCard from '../components/WeeksCard';
 import COLORS from '../consts/colors';
 import BOOKPAGE from '../bookData/book';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const dataList = [
   'Week One',
@@ -26,22 +28,43 @@ const dataList = [
 ]
 
 const HomeScreen = ({navigation}) => {
+  const [showSearch, setShowSearch] = useState(false);
+
+  const showSearchHandler = () => {
+    setShowSearch(!showSearch)
+  }
 
 
   return(
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.gradientDark}}>
       <StatusBar animated={true} translucent={false} backgroundColor={COLORS.gradientDark} barStyle='dark-content' />
       <View style={style.header}>
-        <Text style={{fontSize: 18, fontWeight: 'bold', color: COLORS.white}}>Table Of Contents</Text>
+        <View style={{justifyContent: 'center', alignItems:'center', flexDirection: 'row'}}>
+          <Icon size={30} color={COLORS.white} name='home' />
+          <Text style={{fontSize: 25, marginLeft: 10, fontWeight: 'bold', color: COLORS.white}}>Home</Text>
+        </View>
+        <View>
+          <TouchableOpacity onPress={showSearchHandler}>
+            {
+              !showSearch &&
+              <Icon name='search' size={25} color={COLORS.white} />
+            }
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={style.searchContainer}>
-        
+      {
+        showSearch && 
+        <View style={style.searchContainer}>
         <TextInput 
         placeholder='Search by book name...'
         style={style.input}  />
+        <TouchableOpacity onPress={showSearchHandler}>
+          <Icon style={{backgroundColor: COLORS.gradientDark,paddingHorizontal: 4, paddingVertical: 1.8, borderRadius: 1}} size={35} color={COLORS.white} name='search' />
+        </TouchableOpacity>
       </View>
+      }
 
-      <FlatList data={BOOKPAGE} renderItem={(content) => <WeeksCard books={content.item} card={content.item} navigation={navigation} />} />
+      <FlatList data={BOOKPAGE} renderItem={(content) => <WeeksCard books={content.item} card={content.item} navigation={navigation} showSearchHandler={showSearchHandler} />} />
     </SafeAreaView>
   )
 }
@@ -49,10 +72,13 @@ const HomeScreen = ({navigation}) => {
 const style = StyleSheet.create({
   header: {
     backgroundColor: COLORS.gradientDark,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.grey,
     paddingHorizontal: 25,
     paddingVertical: 20,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'space-between',
+    flexDirection: 'row'
 
   },
 
@@ -61,6 +87,9 @@ const style = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
     marginBottom: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
 
 
   },
@@ -70,9 +99,9 @@ const style = StyleSheet.create({
     fontSize: 16, 
     borderColor: COLORS.white,
     backgroundColor: COLORS.white,
-    borderRadius: 5,
     paddingHorizontal: 5,
     paddingVertical: 5,
+    flex: 1
   }
 })
 
