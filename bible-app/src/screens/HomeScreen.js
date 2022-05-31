@@ -55,7 +55,7 @@ const HomeScreen = ({navigation}) => {
       {
         showSearch && 
         <View style={style.searchContainer}>
-        <TextInput 
+        <TextInput focusable={true}
         placeholder='Search by book name...'
         style={style.input}  />
         <TouchableOpacity onPress={showSearchHandler}>
@@ -63,6 +63,9 @@ const HomeScreen = ({navigation}) => {
         </TouchableOpacity>
       </View>
       }
+      <View style={{paddingHorizontal: 10, paddingVertical: 10}}>
+        <Text style={{color: COLORS.white, fontSize: 20, fontWeight: 'bold'}}>Table Of Contents</Text>
+      </View>
 
       <FlatList data={BOOKPAGE} renderItem={(content) => <WeeksCard books={content.item} card={content.item} navigation={navigation} showSearchHandler={showSearchHandler} />} />
     </SafeAreaView>

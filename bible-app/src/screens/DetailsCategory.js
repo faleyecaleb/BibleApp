@@ -29,7 +29,7 @@ const DetailsCategory = ({navigation, route}) => {
               <Text style={{fontSize: width * 0.05, fontWeight: 'bold'}}>Know Your Bible Better</Text>
             </View>
             <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
-              <Icon name='arrow-back' size={width * 0.05 && height * 0.05} />
+              <Icon name='arrow-back-ios' size={25} />
             </TouchableOpacity>
           </View>
 
@@ -75,7 +75,7 @@ const DetailsCategory = ({navigation, route}) => {
         </View>
         <View>
             <View style={style.bottomTabIconContainer}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
                 <Icon name='home' color={COLORS.gradientLight} size={30} />
                 <Text style={{color: COLORS.gradientLight }}>Prayers</Text>
               </TouchableOpacity>
@@ -98,7 +98,8 @@ const style = StyleSheet.create({
   detailsCategoryHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: height * 0.02
+    paddingVertical: height * 0.02,
+    alignItems: 'center'
   },
 
   backgroundImage: {

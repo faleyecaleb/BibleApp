@@ -12,11 +12,11 @@ const WeeksCard = ({navigation, card, books, showSearchHandler}) => {
       <TouchableOpacity onPress={(e) => navigationHandler(e)}>
         <View style={style.cardText}>
           <View style={style.weeksCardNumber}>
-              <Text style={{fontSize: 25, color: COLORS.white}}>{card.number}</Text>
+              <Text style={{fontSize: 25, color: COLORS.white}}>{books.number}</Text>
           </View>
           <View style={{justifyContent: 'center', alignItems: 'flex-start'}}>
             <Text style={style.cardTextPrimary}>{card.name}</Text>
-            <Text style={style.cardTextSecondary}>An OverView Of The Book Of Genesis</Text>
+            <Text style={style.cardTextSecondary}>{card.title}</Text>
           </View>
         </View>
       </TouchableOpacity>

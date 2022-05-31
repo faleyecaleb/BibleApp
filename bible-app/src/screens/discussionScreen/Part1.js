@@ -13,8 +13,9 @@ const Part1 = () => {
   
   return (
     <View>
-      {msg.partOne ? 
-        <ScrollView style={{paddingHorizontal: 8}}>
+      {msg.partOne? 
+        <ScrollView style={{paddingHorizontal: 25}}>
+          <Text>{msg.partOne.name}</Text>
         
         <Text selectable={true} style={{fontSize: 16, textAlign: 'left', lineHeight: 27, paddingBottom: 50}}>{msg.partOne.content}</Text>
       </ScrollView>
@@ -33,7 +34,7 @@ const Part1 = () => {
 
 const style = StyleSheet.create({
   text: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 25
 
     
   }

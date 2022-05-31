@@ -23,7 +23,7 @@ const style = StyleSheet.create({
   button: {
     alignItems: "center",
     marginHorizontal: 10,
-    width: width * 0.4
+    width: width * 0.37
   },
 
   detailsCardContainer: {
