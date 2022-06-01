@@ -1587,50 +1587,6 @@ export const weekTwentySix = {
   }
 }
 
-// const weekThirty = {
-//   name: 'Week Thirty',
-//   number: 30,
-//   title: '',
-//   introduction: {
-//     memory_verse: {
-//       name: `Memory Verse`,
-//       content: ``
-//     },
-//     title: `An Overview Of The Book Of Genesis`,
-//     name: `Introduction`,
-//     content: ``
-//   },
-
-//   discussion: {
-//     title: 'An Overview Of The Book Of Genesis',
-//     name: 'Discussion',
-//     partOne: {
-//       name: 'THE PRIMEVAL HISTORY OF MANKIND (Chaps. 1-11)',
-//       content: ``,
-
-//     },
-//   },
-//   partTwo: {
-//     name: ``,
-//     content: ``
-//   },
-
-//   conclusion: {
-//     title: 'An Overview Of The Book Of Genesis',
-//     name: 'Conclusion',
-//     content: ``
-//   },
-
-//   prayers: {
-//     title: 'An Overview Of The Book Of Genesis',
-//     name: 'Prayer Points',
-//     content: ``,
-//   }
-// }
-
-
-
-
 
 export const weekTwentySeven = {
   name: 'Week Twenty Seven',
@@ -2042,11 +1998,261 @@ export const weekThirtyTwo = {
   }
 }
 
-// ================================= WEEK THIRTY THREE =====================================
 
-const weekThirtyThree = {
+export const weekThirtyThree = {
   name: 'Week Thirty Three',
   number: 33,
+  title: 'An Overview Of The Book Of Malachi',
+  introduction: {
+    memory_verse: {
+      name: `Memory Verse`,
+      content: `"For behold, the day is coming, burning like an oven, and all the proud, yes, all who do wickedly will be stubble. And the day which is coming shall burn them up, says the LORD of hosts, "That will leave them neither root nor branch" (Malachi 4:1).`
+    },
+    title: `An Overview Of The Book Of Genesis`,
+    name: `Introduction`,
+    content: `The book of Malachi is the last prophetic book of the Jewish canon. The T same goes with our Old Testament. Malachi' means my messenger or messenger of the LORD. During the 5th century BC, the struggling Jewish community in Judah was greatly assisted by the return of Ezra and Nehemiah (Neh. 5:2-13; 6:15; 10:35-39; 13:6-31). Malachi was written to shake the people of Judah from their spiritual lethargy, and warn them that judgement was coming, unless they repented. The book confronts the believers with their sins and warns us to come back to God, even as we restore our relationship with Him. It also talks about how God loves perfectly, completely and unconditionally. God loves His people, even when they choose to neglect and disobey Him. The writer reprimands the people on their aim for religious freedom and independence. They fail to acknowledge the wonderful love of God but choose to gradually despise His laws and name.
+
+    We are today's Israelites, God has offered this same great love to us, He is now pleading and beseeching us to accept His great offer through Jesus Christ our Lord. We are not different from the past Israelites in the way we view God's glorious offer of love through His only begotten Son, Jesus Christ. Today, we have forgotten God as the Source of our life and existence. Everyone chooses to live according to his/her own selfish interest rather than living according to the biblical standard of a Christian life. Accountability is mandatory. undeniable and irresistible.`
+  },
+
+  discussion: {
+    title: 'An Overview Of The Book Of Genesis',
+    name: 'Discussion',
+    content: `The signs of spiritual lethargy. Malachi was written to shake the people of Judah from their sin which include that they doubted God's love (1:2) and justice (2:17), and didn't take His commands seriously (1:6; 3:14-18). Yet, God is a great King (1:14) with a great Name, to be feared, even beyond the borders of Israel (vv. 5,11).
+
+    • Israel lost their sense of belonging and their priests have become corrupt (2:1-9), despite the privileges they received from God-divinely chosen, loved and blessed (1:2). The people acted and treated their fellow brothers treacherously, unfaithfully, deceitfully and disloyally.
+    
+    Discouragement about the Messiah's delay in appearance, and the destruction of God's enemies led to the complacency in obeying God's commandments (2:11-12). Unfaithfulness and the ungodly lifestyle of the priests contributed to the devastating collapse of marriages and family life (vv. 14-15).
+    
+    Malachi repeatedly urges both the priests and the people to revere God and give him the honour He deserves. God is Israel's Father and Creator (2:10), but the nation showed contempt for His name (1:6; 3:5). A thing that would make God send His messenger to announce the Day of the LORD (3:1; cf.Jn. 2:14-15) and to establish the covenant (3:1-2).
+    
+    GOD'S PROMISES
+    
+    • The promise of a messenger and of the Messiah (3:1).
+    • The people would be God's treasured possession (3:17a).
+    . God's final Judgement would show compassion on those who serve faithfully, and the wicked ones would be judged accordingly (3:17b-18).
+    
+    . The promise that the night of evil would come to an end (4:2). The day when the evildoers would be destroyed like chaff in the furnace of God's wrath (4:1-3). The only way to escape from God's wrath and the dreadful day, is to fear God, obey His words and live a holy life.
+    
+    HOW THESE APPLY TO US 
+    1. We aren't different from the people in Malachi, as we become callous to God's love towards us, losing focus as we neglect our love for Him, His Word and service.  
+    2. No matter the circumstances and situations, God's love over us is constant, because He is our Father and Creator. However, His eternal rewards are for those who remain obedient, and faithful to His laws and leading. God deserves our very best honour and respect.
+    3. It pleases God to see His children being faithful, generous, grateful, loving and hopeful. The way we love reflects the sincerity of our love for God. 
+    4. It is God's plan to have a pure, righteous and devoted priesthood in His vineyard, to lead His people aright and set a godly example for them to emulate.
+    5. There is no doubt about the fact that we are God's representatives here on earth; therefore, we must: . Fear Him in all our endeavours;
+    
+    . Be faithful to Him and in everything; 
+    • Abstain from every form of ungodliness; and
+    . Stick to the fact that we are His messengers (the sent).
+    
+    6. We must do everything possible to build godly and healthy home. Godly passion in marriage relationship helps to keep commitment and intimacy.
+    
+    7. God hates divorce. Both polygamy and divorce are not conducive to raise
+    
+    and nurture godly and God-fearing Children (2:1ff; cf. Matt. 19:1ff). 8. Christ's first appearance was to save and purify all those who believe in and accept Him, but His second coming will definitely expose and condemn every act of wickedness and ungodliness.
+    
+    9. Jesus will perfectly refine and purify at His Second Coming: purify His people (cf. vv. 2-4); and judge the wicked (4:1).`
+  },
+
+  conclusion: {
+    title: 'An Overview Of The Book Of Genesis',
+    name: 'Conclusion',
+    content: `Malachi emphasises the necessity of giving God proper worship, condemns unfaithfulness to marriage covenant and at the same time, proclaims that the harvest of the end time is at hand. We are also compelled to remain faithful to our responsibilities to God and fellow humans, as there are rewards for both the obedient and the erring. We will not fail.`
+  },
+
+  prayers: {
+    title: 'An Overview Of The Book Of Genesis',
+    name: 'Prayer Points',
+    content: `1) Thank You, Lord, for reviving our consciousness to the fact that You love us, but we must not abuse this love for any reason.
+    2) Seek God's forgiveness for being unfaithful to your relationship with Him at any pointing time.
+    3) Pray for His grace to always remember and remain in His unfailing love. 
+    4) Pray that God should give us victory over the wickedness that is pervading the nooks and crannies of the society and subtly eating deep into churches.
+    
+    `,
+  }
+}
+
+// ================================= WEEK THIRTY FOUR =====================================
+
+export const weekThirtyFour = {
+  name: 'Week Thirty Four',
+  number: 34,
+  title: 'An Overview Of The Gospel According To St. Mathew',
+  introduction: {
+    memory_verse: {
+      name: `Memory Verse`,
+      content: `And she will bring forth a Son, and you shall call His name JESUS, for He will save His people from their sins (Matthew 1:21).`
+    },
+    title: `An Overview Of The Book Of St. Mathew`,
+    name: `Introduction`,
+    content: `Tradition holds that Matthew is the writer of the Gospel according to St. Matthew. The early church fathers unanimously agreed that Matthew, or Levi, the son of Alpahaeus, was a publican. Matthew sees no difference between history and theology. No wonder it has been strongly held that the Gospel of Matthew coming first is no accident. It stands as a superb transition from the OT to the NT; a swinging door that connects the OT reader to the NT. Although, like the OT, the NT isn't written in exact chronological order, the Gospel of Matthew does make the perfect preface for the Jews to the new and better Covenant. For Matthew, the Kingdom of God is the priority. The Book is a perfect ending of the 400-year divine silence between the OT and the NT.
+
+    Matthew has a special appeal to the Jews because of the line of Jesus Chri which he traces all the way back to Abraham, the father of the nation of Israel, wanting them to understand that not only is Jesus King, but also the predicted and long-awaited Messiah. No wonder the phrase repeatedly stressed in the Book is Son of God that appears 8 times in the book. It is the most Jewish of the gospel writings. It presents the most systematic programme for Israel and her Messiah. It mentions the Kingdom of God and Heaven more than any other book in the New Testament.`
+  },
+
+  discussion: {
+    title: 'An Overview Of The Book Of St. Mathew',
+    name: 'Discussion',
+    content: `1:1ff: By tracing the line of Jesus, linking Him up with the Covenant lineage of Israel, Matthew presents Jesus as the Rescuer who comes to fulfil the OT (5:17).
+
+    The theme of Matthew is Jesus the Saviour King. It introduces Him as the King in presentations by ancestry (1:1-17), by advent (1:18-2:23), by an ambassador (3:1-12), and through approval (3:13-4:11).
+    
+    As the King, what are His credentials? a) His power over disease (8:1-15)
+    
+    b) His power over demonic forces (8:16-17,28-34)
+    
+    c) His power over men (8:18-22;9:9) d) His power over nature (8:23-27)
+    
+    e) His power to forgive (9:1-8)
+    
+    f) His power over traditions (9:10-17) g) His power over death (9:18-26) NO
+    
+    h) His power over darkness (9:27-31) th the dat i) His power over dumbness (9:32-34) nalts
+    
+    j) His power to delegate authority (9:35-11:1) • What is the import of Matthew 1:21?
+    
+    Matthew portrays Jesus as the possessor of authority (7:29). He is the King of the Jews, the Lord indeed of the great King David. To Him belongs the kingdom of heaven.
+    
+    Mention some of the ways by which Jesus' authority is challenged as the King (11:20-30; 13:1-16:12). 
+    
+    The Gospel of Matthew reveals what genuine discipleship is-emulating Jesus, pursuing genuine righteousness beyond that of the Pharisees and Scribes (5:1ff). Have you been doing these?
+    
+    Matthew is the only Gospel containing the word 'Church. Christ builds His Church (16:18,19), for harmony (5:21-24; 6:14,15; 18:5-14), and sacraments (26:27-29). From these Scriptures, what is your definition of the Church? Compare this with what happens in churches today. . 
+    
+    Matthew foresees the Church's worldwide mission. Jesus intends the gospel to start with the Jews, but laid the foundation for gentiles to come and admit Him as Lord-the visit of the Magi; His interactions with gentiles such as the people from Syria and Decapolis, a Roman centurion, and a Canaanite woman (cf. 21:43). Then, He gives the Great Commission (28:19,20). What is your attitude to the Great Commission? (2 Cor. 13:5)`
+  },
+
+  conclusion: {
+    title: 'An Overview Of The Book Of St. Mathew',
+    name: 'Conclusion',
+    content: `The book of Matthew is the book of Jesus, written about Jesus, for Jesus' people, in order that they may put their faith in Him, and preach to, and teach the world about Him-His ancestry, birth, sacrificial life, atoning death, glorious resurrection, and reassuring ascension. May we be assisted to better appreciate the relevance of this Book in our individual day to day living, as well as in the smooth running of the affairs of the world around us, individually and corporately.`
+  },
+
+  prayers: {
+    title: 'An Overview Of The Book Of St. Mathew',
+    name: 'Prayer Points',
+    content: `1) Thank You, Jesus, for opening our eyes in Matthew to the fact of your being the fulfilment of the expected Seed (the Messiah)
+    2) Lord Jesus, take Your rightful place as the King and Lord of my life in every respect.
+     3) Lord Jesus, take Your rightful place as the King and Lord of our churches and nation.
+    `,
+  }
+}
+
+
+
+export const weekThirtyFive = {
+  name: 'Week Thirty Five',
+  number: 35,
+  title: 'An Overview Of The Gospel According To Mark',
+  introduction: {
+    memory_verse: {
+      name: `Memory Verse`,
+      content: `And saying, "The time is fulfilled, and the kingdom of God is at hand. Repent, and believe in the gospel" (Mark 1:15).`
+    },
+    title: `An Overview Of The Book Of Mark`,
+    name: `Introduction`,
+    content: `This is the 2nd book of the New Testament. John Mark is traditionally held to be the writer of this book about 50-60 AD as suggested, having transcribed the teaching of Apostle Peter. John Mark, was familiar with Peter, Jesus' closest disciple.The Gospel according to Mark has no story of Jesus' birth. Instead, Mark's story begins by describing Jesus' adult life, introducing it with the words, The beginning of the good news of Jesus Christ, the Son of God (1:1). He told of John the Baptist, who predicts the coming of a man more powerful than himself. Mark's Gospel stresses the deeds, strength and determination of Jesus in overcoming evil forces and defying the power of imperial Rome. Mark also emphasises the passion, predicting it as early as chapter 8 and devoting the final third of his Gospel (Chaps. 11-16) to the last week of Jesus' life. One of the most striking elements in the Gospel is Mark's characterization of Jesus as reluctant to reveal Himself as the Messiah. Jesus refers to Himself only as the Son of Man (8:27-30)
+
+    The theme of the book is Jesus Christ as the Messiah and the Saviour of mankind. Its central message is that Jesus Christ, the Son of God, has come to the earth that the kingdom of God is at hand, and that all should repent and believe in the gospel (1:15). Basically, Mark aims to share the life story and purpose of Jesus Christ as our Lord and Saviour. He takes a special direction of introducing Jesus as the one with a mission of love and the power to change the world. While other gospels document more parables, Mark shares 21 miracles, 2 of which are unique to his account.
+    
+    Characteristically, Mark's Gospel is action driven. Mark wrote with much more pace than the other synoptic gospel authors. His style displays a level of repetitions (1:32). The Gospel is written more as a sermon that serves as a motivational call to action.
+    `
+  },
+
+  discussion: {
+    title: 'An Overview Of The Book Of Mark',
+    name: 'Discussion',
+    content: `. What is the relationship between John Mark and Peter (Acts 12:12), because Mark was believed to have gathered the preaching of Peter?
+
+    He was obviously once a co-traveller with Barnabas and Paul during their first missionary outing (Acts 12:5; 13:5). He went on attrition, a thing that made Paul to reject him on the second journey (Acts 12:25; 13:5; 15:36 39). But he later became mature and useful to even Paul himself (Col.4:10). 
+    
+    • God promised to send a messenger to prepare the way for His Messiah (Christ). In the light of these prophecies, how did John understand His mission (1:1-9)?
+    
+    . Note that the Mark's Gospel emphasises what Jesus did rather than what He said. Mark portrays the human side of Jesus. He captures Jesus behaving like a normal human being (4:35-45).
+    
+    •Right from the start, Mark declares the divinity of Jesus-He is Christ, the Son of God (1:1). He also makes it clear that Jesus is human by telling us about Jesus' emotions - He was moved with compassion (6:34), He sighed (7:34, 8:12), He got tired and went to sleep on a cushion (4:38). Because He was both divine and human, He is the only acceptable Sacrifice for us (10:45). In spite of His divinity, Jesus says He came not to be served but to serve.
+    
+    . Despite being the most concise of the Gospels, it is aimed at preparing the readers for martyrdom. The believers were passing through the Roman Government's persecution (AD 64-67). It thus prophetically anticipates what would happen to the Church, since Jesus has been presented as our Example.
+    
+    How does the Galilean ministry of Jesus that 1:1-8:26 account for, describe Jesus?
+    
+    . In 8:27-10:52, we see Jesus discussing His suffering with His What does that imply for our Christian living (8:34)?
+    
+    Jesus, in the Gospel of Mark, is portrayed as the prophesied Messiah, the sinless Son of God He claims to be.
+    
+    Mark's gospel is intended not only to transfer information about Jesus but also impart to the reader an impression of Him.
+    
+    What instructions show that Jesus wanted them to be devoted wholly to the preaching of the Word, and to not waste any time, and not to follow human tradition(6:8-9;7:10-12)?
+    
+    Why did the disciples react the way they did when Jesus told them what was going to happen to Him (9:31-32)?
+    
+    Like record of Matthew, Jesus also instructs the Disciples to go to work for Him, He never forgets to give His assurance (16:14-20) Any Implications?`
+  },
+
+  conclusion: {
+    title: 'An Overview Of The Book Of Mark',
+    name: 'Conclusion',
+    content: `Mark's gospel, though the shortest, shows us the life of Christ like a panorama. It portrays both the humanity and deity of Christ Jesus in a unique manner. Christ's faithfulness to His mission on earth should challenge us to remain focused on all that He has for us. This is made possible by our commitment to his kind of discipleship. Following Jesus means denying yourself, taking up your cross, and following Him till the end.`
+  },
+
+  prayers: {
+    title: 'An Overview Of The Book Of Mark',
+    name: 'Prayer Points',
+    content: `1) Thank God for His mighty power of transformation embedded in Mark's Gospel.
+    2) Ask God for the right hunger to know more and more of Christ and His Way. 
+    3) Ask for God's grace to be more committed to becoming like and growing in our Lord Jesus Christ.
+    `,
+  }
+}
+
+// const weekThirty = {
+//   name: 'Week Thirty',
+//   number: 30,
+//   title: '',
+//   introduction: {
+//     memory_verse: {
+//       name: `Memory Verse`,
+//       content: ``
+//     },
+//     title: `An Overview Of The Book Of Genesis`,
+//     name: `Introduction`,
+//     content: ``
+//   },
+
+//   discussion: {
+//     title: 'An Overview Of The Book Of Genesis',
+//     name: 'Discussion',
+//     partOne: {
+//       name: 'THE PRIMEVAL HISTORY OF MANKIND (Chaps. 1-11)',
+//       content: ``,
+
+//     },
+//   },
+//   partTwo: {
+//     name: ``,
+//     content: ``
+//   },
+
+//   conclusion: {
+//     title: 'An Overview Of The Book Of Genesis',
+//     name: 'Conclusion',
+//     content: ``
+//   },
+
+//   prayers: {
+//     title: 'An Overview Of The Book Of Genesis',
+//     name: 'Prayer Points',
+//     content: ``,
+//   }
+// }
+
+
+
+// ================================= WEEK THIRTY SIX =====================================
+
+const weekThirtySix = {
+  name: 'Week Thirty Six',
+  number: 36,
   title: '',
   introduction: {
     memory_verse: {
@@ -2084,3 +2290,4 @@ const weekThirtyThree = {
     content: ``,
   }
 }
+
