@@ -4,9 +4,22 @@ import IMAGES from '../../src/consts/images'
 import COLORS from '../consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import DetailsCard from '../components/DetailsCard';
+import { AdMobInterstitial } from 'expo-ads-admob';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
+
+const interstitial = async () => {
+  await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); // Test ID, Replace with your-admob-unit-id
+
+  try {
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
+    await AdMobInterstitial.showAdAsync();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 const DetailsCategory = ({navigation, route}) => {
   const books = route.params;

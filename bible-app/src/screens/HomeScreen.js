@@ -1,38 +1,12 @@
-import { Text, View, SafeAreaView, StatusBar, FlatList, StyleSheet, TextInput, } from 'react-native'
+import { Text, View, TouchableOpacity, SafeAreaView, StatusBar, FlatList, StyleSheet, TextInput, } from 'react-native'
 import { useState } from 'react';
 import WeeksCard from '../components/WeeksCard';
 import COLORS from '../consts/colors';
 import BOOKPAGE from '../bookData/book';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
-const dataList = [
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-  'Week One',
-]
 
 const HomeScreen = ({navigation}) => {
   const [showSearch, setShowSearch] = useState(false);
-
-  const showSearchHandler = () => {
-    setShowSearch(!showSearch)
-  }
 
 
   return(
@@ -44,7 +18,7 @@ const HomeScreen = ({navigation}) => {
           <Text style={{fontSize: 25, marginLeft: 10, fontWeight: 'bold', color: COLORS.white}}>Home</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={showSearchHandler}>
+          <TouchableOpacity>
             {
               !showSearch &&
               <Icon name='search' size={25} color={COLORS.white} />
@@ -55,10 +29,7 @@ const HomeScreen = ({navigation}) => {
       {
         showSearch && 
         <View style={style.searchContainer}>
-        <TextInput focusable={true}
-        placeholder='Search by book name...'
-        style={style.input}  />
-        <TouchableOpacity onPress={showSearchHandler}>
+        <TouchableOpacity>
           <Icon style={{backgroundColor: COLORS.gradientDark,paddingHorizontal: 4, paddingVertical: 1.8, borderRadius: 1}} size={35} color={COLORS.white} name='search' />
         </TouchableOpacity>
       </View>
@@ -67,7 +38,7 @@ const HomeScreen = ({navigation}) => {
         <Text style={{color: COLORS.white, fontSize: 20, fontWeight: 'bold'}}>Table Of Contents</Text>
       </View>
 
-      <FlatList data={BOOKPAGE} renderItem={(content) => <WeeksCard books={content.item} card={content.item} navigation={navigation} showSearchHandler={showSearchHandler} />} />
+      <FlatList keyExtractor={(item, index) => index.toString()} data={BOOKPAGE} renderItem={(content) => <WeeksCard books={content.item} card={content.item} navigation={navigation}/>} />
     </SafeAreaView>
   )
 }

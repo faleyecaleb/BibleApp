@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import COLORS from '../consts/colors'
-const WeeksCard = ({navigation, card, books, showSearchHandler}) => {
+const WeeksCard = ({navigation, card, books}) => {
 
   const navigationHandler = (e) => {
     navigation.navigate('Details', card);
-    showSearchHandler(false)
+
   }
   return (
     <View style={{flex: 1, paddingHorizontal: 10, backgroundColor: COLORS.gradientDark}}>
