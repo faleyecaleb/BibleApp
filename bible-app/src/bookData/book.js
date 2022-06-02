@@ -1,4 +1,4 @@
-import {weekOne, weekTwo, weekThree, weekFour, weekFive, weekSix, weekSeven, weekEight, weekNine, weekTen, weekEleven, weekTwelve, weekThirteen, weekFourteen, weekFifteen, weekSixteen, weekSeventeen, weekEighteen, weekNineteen, weekTwenty, weekTwentyOne, weekTwentyTwo, weekTwentyThree, weekTwentyFour, weekTwentyFive, weekTwentySix, weekTwentySeven, weekTwentyEight, weekTwentyNine, weekThirty, weekThirtyOne, weekThirtyTwo, weekThirtyThree, weekThirtyFour, weekThirtyFive} from "./bookDataList/week1"
+import {weekOne, weekTwo, weekThree, weekFour, weekFive, weekSix, weekSeven, weekEight, weekNine, weekTen, weekEleven, weekTwelve, weekThirteen, weekFourteen, weekFifteen, weekSixteen, weekSeventeen, weekEighteen, weekNineteen, weekTwenty, weekTwentyOne, weekTwentyTwo, weekTwentyThree, weekTwentyFour, weekTwentyFive, weekTwentySix, weekTwentySeven, weekTwentyEight, weekTwentyNine, weekThirty, weekThirtyOne, weekThirtyTwo, weekThirtyThree, weekThirtyFour, weekThirtyFive, weekThirtySix, weekThirtySeven, weekThirtyEight, weekThirtyNine, weekForty, weekFortyOne, weekFortyTwo, weekFortyThree, weekFortyFour, weekFortyFive, weekFortySix, weekFortySeven, weekFortyEight, weekFortyNine, weekFifty, weekFiftyOne, weekFiftyTwo} from "./bookDataList/week1"
 const BOOKPAGE = [
   weekOne,
   weekTwo,
@@ -35,6 +35,24 @@ const BOOKPAGE = [
   weekThirtyThree,
   weekThirtyFour,
   weekThirtyFive,
+  weekThirtySix,
+  weekThirtySeven,
+  weekThirtyEight,
+  weekThirtyNine,
+  weekForty,
+  weekFortyOne,
+  weekFortyTwo,
+  weekFortyThree,
+  weekFortyFour,
+  weekFortyFive,
+  weekFortySix,
+  weekFortySeven,
+  weekFortyEight,
+  weekFortyNine,
+  weekFifty,
+  weekFiftyOne,
+  weekFiftyTwo,
+  
 ]
 
 export default BOOKPAGE;

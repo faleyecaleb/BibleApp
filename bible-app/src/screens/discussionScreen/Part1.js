@@ -1,8 +1,10 @@
-import { View, Text, ScrollView, StyleSheet, useWindowDimensions } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Button, useWindowDimensions, TouchableHighlight } from 'react-native'
 import React, {useContext} from 'react';
 import BOOKPAGE from '../../bookData/book';
 import { myBooks } from './Discussions';
 import { UserContext } from './UserContext';
+import * as Speech from 'expo-speech';
+
 
 
 const Part1 = () => {
@@ -10,6 +12,10 @@ const Part1 = () => {
   
   const books = BOOKPAGE;
   const layout = useWindowDimensions()
+
+  const handleClick = (text) => {
+    Speech.speak(text)
+  }
   
   return (
     <View>
@@ -23,6 +29,7 @@ const Part1 = () => {
       :
 
       <ScrollView style={style.text}>
+        <Button title='Submit' color={'red'} onPress={() => handleClick('Life is good')} />
         <Text selectable={true} style={{fontSize: 16, textAlign: 'left', lineHeight: 35, paddingBottom: 50}}>{msg.content}</Text>
       </ScrollView>
       } 
