@@ -6,6 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Details from './src/screens/DetailsCategory';
 import {Discussions} from './src/screens/discussionScreen/Discussions';
 import { UserContext } from './src/screens/discussionScreen/UserContext';
+import Quiz from './src/screens/quiz/Quiz';
 
 
 const Stack = createStackNavigator();
@@ -23,6 +24,7 @@ export default function App() {
           <Stack.Screen name='HomeScreen' component={HomeScreen} />
           <Stack.Screen name='Details' component={Details} />
           <Stack.Screen name='Discussion' component={Discussions} />
+          <Stack.Screen name='Quiz' component={Quiz} />
         </Stack.Navigator>
       </NavigationContainer>
     

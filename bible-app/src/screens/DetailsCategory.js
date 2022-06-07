@@ -9,7 +9,7 @@ import { AdMobInterstitial } from 'expo-ads-admob';
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
-const interstitial = async () => {
+const instertitial = async () => {
   await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); // Test ID, Replace with your-admob-unit-id
 
   try {
@@ -41,7 +41,10 @@ const DetailsCategory = ({navigation, route}) => {
               <Text style={{fontSize: width * 0.045}}>Theme:</Text>
               <Text style={{fontSize: width * 0.05, fontWeight: 'bold'}}>Know Your Bible Better</Text>
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
+            <TouchableOpacity onPress={() => {
+              instertitial()
+              navigation.navigate('HomeScreen')
+            }}>
               <Icon name='arrow-back-ios' size={25} />
             </TouchableOpacity>
           </View>
@@ -92,9 +95,9 @@ const DetailsCategory = ({navigation, route}) => {
                 <Icon name='home' color={COLORS.gradientLight} size={30} />
                 <Text style={{color: COLORS.gradientLight }}>Prayers</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => alert('Coming Soon...')}>
-                <Icon name='note' color={COLORS.white} size={30} />
-                <Text style={{color: COLORS.white }}>Note</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Quiz')}>
+                <Icon name='question-answer' color={COLORS.white} size={30} />
+                <Text style={{color: COLORS.white }}>Quiz</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => alert('Coming Soon...')} style={{alignItems: 'center',justifyContent: 'center',}}>
                 <Icon name='search' color={COLORS.white} size={30} />
@@ -155,7 +158,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.gradientDark,
     paddingHorizontal: width * 0.05,
-    elevation: 5,
+    elevation: 10,
 
   }
 
