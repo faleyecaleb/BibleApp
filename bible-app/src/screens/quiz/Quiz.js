@@ -2,6 +2,7 @@ import { View, Text, SafeAreaView, ImageBackground, StyleSheet, Dimensions, Stat
 import React from 'react'
 import Money from './Money'
 import COLORS from '../../consts/colors';
+import Questions from './Questions';
 
 
 const height = Dimensions.get('screen').height;
@@ -26,14 +27,19 @@ const height = Dimensions.get('screen').height;
 
 const Quiz = () => {
   const img = require('../../assets/images/quizImg.jpg');
-  const [isTrue, setIsTrue] = React.useState(true)
+  const [isTrue, setIsTrue] = React.useState(false)
   return (
     <SafeAreaView>
       <StatusBar animated={true} backgroundColor={COLORS.dark} barStyle={'light-content'} />
       <ImageBackground resizeMode='cover' style={styles.backgrounImage} source={img}>
         
         <View style={{height: '100%'}} >
-        <FlatList data={money} renderItem={(item) => <Money money={item.item} check={isTrue} setIsTrue={setIsTrue} />} />
+        {
+          isTrue ? 
+          <FlatList data={money} renderItem={(item) => <Money money={item.item} check={isTrue} setIsTrue={setIsTrue} />} />
+          :
+          <Questions />
+        }
         </View>
       </ImageBackground>
     </SafeAreaView>
