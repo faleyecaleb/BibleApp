@@ -1,29 +1,48 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, FlatList,Button, StyleSheet,Dimensions, TouchableOpacity,  } from 'react-native'
+import React from 'react';
+import COLORS from '../../consts/colors';
+import MoneyList from './component/MoneyList';
 
-const Money = () => {
-  const money = [
-    {id: 1, amount: '$ 100'},
-    {id: 2, amount: '$ 200'},
-    {id: 3, amount: '$ 300'},
-    {id: 4, amount: '$ 500'},
-    {id: 5, amount: '$ 1000'},
-    {id: 6, amount: '$ 2000'},
-    {id: 7, amount: '$ 4000'},
-    {id: 8, amount: '$ 8000'},
-    {id: 1, amount: '$ 16000'},
-    {id: 1, amount: '$ 32000'},
-    {id: 1, amount: '$ 64000'},
-    {id: 1, amount: '$ 125000'},
-    {id: 1, amount: '$ 250000'},
-    {id: 1, amount: '$ 500000'},
-    {id: 1, amount: '$ 1000000'},
-  ]
+
+const layout = Dimensions.get('screen')
+
+const Money = ({money}) => {
+  const [questionNumber, setQuestionNumber] = React.useState(13)
   return (
-    <View>
-      <Text>Money</Text>
-    </View>
+    <TouchableOpacity>
+      <View style={styles.moneyContainer}>
+        <View style={questionNumber == money.id ? [styles.moneyContainerList, styles.active] : styles.moneyContainerList}>
+          <Text style={{color: COLORS.white}}>{money.id}</Text>
+          <Text style={{color: COLORS.white}}>{money.amount}</Text>
+        </View>
+      </View>
+    </TouchableOpacity>
   )
 }
+
+const styles = StyleSheet.create({
+  moneyContainer: {
+    backgroundColor: COLORS.transparent,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+
+  moneyContainerList: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: COLORS.white,
+    width: '50%',
+    paddingVertical: 10,
+    marginBottom: 4,
+    borderRadius: 4,
+    elevation: 5,
+
+  },
+
+  active: {
+    backgroundColor: 'teal'
+  }
+})
 
 export default Money

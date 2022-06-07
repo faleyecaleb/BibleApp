@@ -20,7 +20,7 @@ export default function App() {
         
     // </UserContext.Provider>
     <NavigationContainer>
-        <Stack.Navigator initialRouteName='HomeScreen' screenOptions={{headerShown: false}}>
+        <Stack.Navigator initialRouteName='Quiz' screenOptions={{headerShown: false}}>
           <Stack.Screen name='HomeScreen' component={HomeScreen} />
           <Stack.Screen name='Details' component={Details} />
           <Stack.Screen name='Discussion' component={Discussions} />
