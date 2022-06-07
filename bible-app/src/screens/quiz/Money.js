@@ -1,7 +1,6 @@
 import { View, Text, FlatList,Button, StyleSheet,Dimensions, TouchableOpacity,  } from 'react-native'
 import React from 'react';
 import COLORS from '../../consts/colors';
-import MoneyList from './component/MoneyList';
 
 
 const layout = Dimensions.get('screen')
