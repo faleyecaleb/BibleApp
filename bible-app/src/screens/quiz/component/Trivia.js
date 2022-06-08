@@ -2,42 +2,59 @@ import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native
 import React from 'react'
 import COLORS from '../../../consts/colors'
 
-const Trivia = ({data, setTimeout, setQuestionNum, questionNum}) => {
+const Trivia = ({data, setStop, setQuestionNum, setIsTrue, questionNum}) => {
   const [question, setQuestion] = React.useState(null);
-
-  const options = ['A', 'B', 'C', 'D']
+  const [selectedAnswer, setSelectedAnswer] = React.useState(null);
+  const [className, setClassName] = React.useState(styles.answerCorrect)
 
   React.useEffect(() => {
     setQuestion(data[questionNum - 1])
-    console.log(data[questionNum - 1].answers);
   },[data, questionNum]);
 
-  const dataList = data.answers;
-
-  const Questions = ({questions}) => {
-    console.log(questions);
+  const Answers = ({questions}) => {
     return(
       <View style={styles.answers}>
-        <TouchableOpacity style={styles.answersText}>
-          <Text></Text>
-          <Text style={{color: COLORS.white, fontSize: 16, textAlign: 'center'}}>{questions.answer}</Text>
-        </TouchableOpacity>
+        <View style={selectedAnswer === questions ? className : styles.answersText}>
+          <Text style={{color: 'white'}}>$</Text>
+          <Text style={{color: COLORS.white, fontSize: 18, textAlign: 'center'}}>{questions.answer}</Text>
+        </View>
       </View>
       
     )
   }
 
-  console.log(typeof data.answer + ' is a what now')
+  const handleClick = (a) => {
+    setSelectedAnswer(a);
+    setClassName([styles.answersText, styles.answerCheck]);
+    setTimeout(() => {
+      setClassName(a.correct ? [styles.answersText, styles.answerCorrect] : [styles.answersText, styles.answerWrong])
+    }, 1000)
+
+    setTimeout(() => {
+      if (a.correct) {
+        setQuestionNum((prevNum) => prevNum + 1)
+        setSelectedAnswer(null)
+      } else{
+        setStop(true)
+        // setIsTrue(true)
+      }
+    }, 2000)
+  }
+
 
   return (
     <View style={styles.trivia}>
-
       <View style={styles.questions}>
         <Text style={{color: COLORS.red, width: 30, fontSize: 25, }}>{question?.id})</Text>
         <Text style={{color: COLORS.white, fontSize: 20}}>{question?.question}?</Text>
       </View>
 
-      <FlatList data={question?.answers} renderItem={(questions) => <Questions questions={questions.item} />} />
+      <FlatList data={question?.answers} renderItem={(questions) => 
+      <TouchableOpacity onPress={() => handleClick(questions.item)}>
+        <Answers questions={questions.item} />
+      </TouchableOpacity>
+      
+      } />
 
     </View>
   )
@@ -86,6 +103,14 @@ const styles = StyleSheet.create({
 
   answerCorrect: {
     backgroundColor: 'teal'
+  },
+
+  answerWrong: {
+    backgroundColor: 'red'
+  },
+
+  answerCheck: {
+    backgroundColor: 'orange'
   }
 })
 export default Trivia

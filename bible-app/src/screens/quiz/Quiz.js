@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, ImageBackground, StyleSheet, Dimensions, StatusBar, FlatList , Button} from 'react-native'
 import React from 'react'
-import Money from './Money'
+import Money from './component/QuizResult'
 import COLORS from '../../consts/colors';
 import Questions from './Questions';
 
@@ -34,12 +34,7 @@ const Quiz = () => {
       <ImageBackground resizeMode='cover' style={styles.backgrounImage} source={img}>
         
         <View style={{height: '100%'}} >
-        {
-          isTrue ? 
-          <FlatList data={money} renderItem={(item) => <Money money={item.item} check={isTrue} setIsTrue={setIsTrue} />} />
-          :
-          <Questions />
-        }
+        <Questions />
         </View>
       </ImageBackground>
     </SafeAreaView>

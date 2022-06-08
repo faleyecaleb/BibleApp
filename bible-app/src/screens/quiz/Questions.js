@@ -3,20 +3,21 @@ import React from 'react'
 import COLORS from '../../consts/colors'
 import Trivia from './component/Trivia'
 import quizData from './data'
+import Timer from './component/Timer'
 
-const Questions = () => {
-  const [timeout, setTimeout] = React.useState(false);
+const Questions = ({setIsTrue}) => {
+  const [stop, setStop] = React.useState(false);
   const [questionNum, setQuestionNum] = React.useState(1)
 
   return (
     <View style={styles.questionsContainer}>
       <View style={styles.top}>
         <View style={styles.timer}>
-          <Text style={{color: COLORS.white, fontSize: 22}}>30</Text>
+          <Text style={{color: COLORS.white, fontSize: 25}}><Timer /></Text>
         </View>
       </View>
       <View style={styles.bottom}>
-        <Trivia data={quizData} setQuestionNum={setQuestionNum} questionNum={questionNum} setTimeout={setTimeout}/>
+        <Trivia setIsTrue={setIsTrue} data={quizData} setQuestionNum={setQuestionNum} questionNum={questionNum} setStop={setStop}/>
       </View>
     </View>
   )
@@ -40,12 +41,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center', 
     alignItems: 'center',
     position: 'absolute',
-    bottom: 0,
-    left: 50,
+    left: 10
+
   },
 
   bottom: {
-    height: '50%'
+    height: '50%',
+    backgroundColor: COLORS.white
   }
 })
 
