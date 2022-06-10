@@ -11,9 +11,6 @@ import {
 
 
 const height = Dimensions.get('window').height
-console.log(height);
-
-
 
 
 const Part1 = () => {
@@ -30,7 +27,7 @@ const Part1 = () => {
         <ScrollView style={{paddingHorizontal: 25}}>
           <Text>{msg.partOne.name}</Text>
         
-        <Text selectable={true} style={{fontSize: 16, textAlign: 'left', lineHeight: 27, paddingBottom: 50,marginBottom: 100}}>{msg.partOne.content}</Text>
+        <Text selectable={true} style={{fontSize: 18, textAlign: 'left', lineHeight: 27, paddingBottom: 50,marginBottom: 100}}>{msg.partOne.content}</Text>
       </ScrollView>
 
       :

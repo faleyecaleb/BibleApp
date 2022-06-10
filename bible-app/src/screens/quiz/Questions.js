@@ -12,12 +12,14 @@ const Questions = ({setIsTrue,navigation}) => {
   const [questionNum, setQuestionNum] = useState(1);
   // const [tryAgain, setTryAgain] = useState(false);
   const [score, setScore] = useState(0)
-  const [totalScore, setTotalScore] = useState(0)
+  const [totalScore, setTotalScore] = useState(0);
+
+  
 
   return (
     <View style={styles.questionsContainer}>
       {
-        stop ? <QuizResult setQuestionNum={setQuestionNum} questionNum={questionNum} setStop={setStop} navigation={navigation} totalScore={totalScore} score={score}   />
+        stop ? <QuizResult setScore={setScore} setTotalScore={setTotalScore} setQuestionNum={setQuestionNum} questionNum={questionNum} setStop={setStop} navigation={navigation} totalScore={totalScore} score={score}   />
         :
         <View>
 
@@ -25,7 +27,7 @@ const Questions = ({setIsTrue,navigation}) => {
           <View>
             <View style={styles.top}>
               <View style={styles.timer}>
-                <Text style={{color: COLORS.white, fontSize: 25}}><Timer setStop={setStop} questionNum={questionNum} setQuestionNum={setQuestionNum} /></Text>
+                <Text style={{color: COLORS.white, fontSize: 25}}><Timer totalScore={totalScore} score={score} setTotalScore={setTotalScore} setScore={setScore} setStop={setStop} questionNum={questionNum} setQuestionNum={setQuestionNum} /></Text>
               </View>
           </View>
           <View style={styles.bottom}>

@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import COLORS from '../../../consts/colors'
 import PopUp from './Modal';
 
+const totalQuestion = 3;
 const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestionNum, questionNum}) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -14,6 +15,12 @@ const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestion
 
     return () => setQuestion(null)
   },[data, questionNum]);
+
+  // React.useEffect(() => {
+    
+
+    
+  // }, [totalScore])
 
   const Answers = ({questions}) => {
     return(
@@ -29,11 +36,18 @@ const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestion
 
   const handleClick = (a) => {
     setTotalScore(totalScore + 1)
-    setSelectedAnswer(a);
-    setClassName([styles.answersText, styles.answerCheck]);
-    setTimeout(() => {
-      setClassName(a.correct ? [styles.answersText, styles.answerCorrect] : [styles.answersText, styles.answerWrong])
-    }, )
+
+    if (totalScore === totalQuestion) {
+      setStop(true)
+    } else {
+      setSelectedAnswer(a);
+      setClassName([styles.answersText, styles.answerCheck]);
+      setTimeout(() => {
+        setClassName(a.correct ? [styles.answersText, styles.answerCorrect] : [styles.answersText, styles.answerWrong])
+      }, )
+    }
+    
+    
 
     setTimeout(() => {
       if (a.correct) {
