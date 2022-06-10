@@ -1,14 +1,18 @@
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import COLORS from '../../../consts/colors'
+import PopUp from './Modal';
 
-const Trivia = ({data, setStop, setQuestionNum, setIsTrue, questionNum}) => {
-  const [question, setQuestion] = React.useState(null);
-  const [selectedAnswer, setSelectedAnswer] = React.useState(null);
-  const [className, setClassName] = React.useState(styles.answerCorrect)
+const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestionNum, questionNum}) => {
+  const [question, setQuestion] = useState(null);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [className, setClassName] = useState(styles.answerCorrect);
+  
 
   React.useEffect(() => {
-    setQuestion(data[questionNum - 1])
+    setQuestion(data[questionNum - 1]);
+
+    return () => setQuestion(null)
   },[data, questionNum]);
 
   const Answers = ({questions}) => {
@@ -24,21 +28,26 @@ const Trivia = ({data, setStop, setQuestionNum, setIsTrue, questionNum}) => {
   }
 
   const handleClick = (a) => {
+    setTotalScore(totalScore + 1)
     setSelectedAnswer(a);
     setClassName([styles.answersText, styles.answerCheck]);
     setTimeout(() => {
       setClassName(a.correct ? [styles.answersText, styles.answerCorrect] : [styles.answersText, styles.answerWrong])
-    }, 1000)
+    }, )
 
     setTimeout(() => {
       if (a.correct) {
+        setScore(questionNum)
         setQuestionNum((prevNum) => prevNum + 1)
         setSelectedAnswer(null)
+        
       } else{
-        setStop(true)
-        // setIsTrue(true)
+        setQuestionNum((prevNum) => prevNum + 1)
+        // setStop(true)
       }
-    }, 2000)
+    }, 1000)
+
+    
   }
 
 

@@ -25,16 +25,15 @@ const height = Dimensions.get('screen').height;
     {id: 15, amount: '$ 1000000'},
   ].reverse()
 
-const Quiz = () => {
+const Quiz = ({navigation}) => {
   const img = require('../../assets/images/quizImg.jpg');
-  const [isTrue, setIsTrue] = React.useState(false)
   return (
     <SafeAreaView>
       <StatusBar animated={true} backgroundColor={COLORS.dark} barStyle={'light-content'} />
       <ImageBackground resizeMode='cover' style={styles.backgrounImage} source={img}>
         
         <View style={{height: '100%'}} >
-        <Questions />
+          <Questions navigation={navigation} />
         </View>
       </ImageBackground>
     </SafeAreaView>
