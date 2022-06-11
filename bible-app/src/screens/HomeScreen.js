@@ -11,7 +11,7 @@ const HomeScreen = ({navigation}) => {
 
   return(
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.gradientDark}}>
-      <StatusBar animated={true} translucent={false} backgroundColor={COLORS.gradientDark} barStyle='dark-content' />
+      <StatusBar animated={true} translucent={false} backgroundColor={COLORS.gradientDark} barStyle='light-content' />
       <View style={style.header}>
         <View style={{justifyContent: 'center', alignItems:'center', flexDirection: 'row'}}>
           <Icon size={30} color={COLORS.white} name='home' />

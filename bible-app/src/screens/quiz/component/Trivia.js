@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import COLORS from '../../../consts/colors'
 import PopUp from './Modal';
 
-const totalQuestion = 3;
+const totalQuestion = 4;
 const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestionNum, questionNum}) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -34,7 +34,7 @@ const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestion
     )
   }
 
-  const handleClick = (a) => {
+  const handleClick = async (a) => {
     setTotalScore(totalScore + 1)
 
     if (totalScore === totalQuestion) {
@@ -49,7 +49,7 @@ const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestion
     
     
 
-    setTimeout(() => {
+    await const check = () => {
       if (a.correct) {
         setScore(questionNum)
         setQuestionNum((prevNum) => prevNum + 1)
@@ -59,7 +59,7 @@ const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestion
         setQuestionNum((prevNum) => prevNum + 1)
         // setStop(true)
       }
-    }, 1000)
+    }
 
     
   }

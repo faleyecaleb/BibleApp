@@ -4,10 +4,21 @@ import IMAGES from '../../src/consts/images'
 import COLORS from '../consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import DetailsCard from '../components/DetailsCard';
-import { AdMobInterstitial } from 'expo-ads-admob';
+import { AdMobInterstitial, AdMobRewarded } from 'expo-ads-admob';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
+
+const rewardAds = async () => {
+  await AdMobRewarded.setAdUnitID('ca-app-pub-3940256099942544/5224354917')
+
+  try {
+    await AdMobRewarded.requestAdAsync();
+    await AdMobRewarded.showAdAsync();
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 const instertitial = async () => {
   await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); // Test ID, Replace with your-admob-unit-id
@@ -30,6 +41,34 @@ const DetailsCategory = ({navigation, route}) => {
     {name: 'praying-hands', title: 'Our Prayers'},
   ]
 
+  const handleQuiz = async () => {
+    await instertitial()
+    navigation.navigate('Quiz');
+
+  }
+
+  //  ============== BACK HOME ICON FUNCTION ===================
+  const handleBackHome = async () => {
+    await instertitial()
+    navigation.navigate('HomeScreen')
+  }
+
+
+  const handleDiscussion = async () => {
+    await instertitial()
+    navigation.navigate('Discussion', books.discussion)
+  }
+
+  //  ============== LOAD ADS BEFORE YOU ENTER PRAYER PAGE ===================
+  const handlePrayer = async () => {
+    await rewardAds()
+    navigation.navigate('Discussion', books.prayers)
+  }
+
+  const handlePrayerTab = async () => {
+    await rewardAds();
+    alert('Feature Is Coming Soon...')
+  }
 
   return (
     <SafeAreaView>
@@ -41,10 +80,7 @@ const DetailsCategory = ({navigation, route}) => {
               <Text style={{fontSize: width * 0.045}}>Theme:</Text>
               <Text style={{fontSize: width * 0.05, fontWeight: 'bold'}}>Know Your Bible Better</Text>
             </View>
-            <TouchableOpacity onPress={() => {
-              instertitial()
-              navigation.navigate('HomeScreen')
-            }}>
+            <TouchableOpacity onPress={handleBackHome}>
               <Icon name='arrow-back-ios' size={25} />
             </TouchableOpacity>
           </View>
@@ -67,7 +103,7 @@ const DetailsCategory = ({navigation, route}) => {
                 <DetailsCard  icon={iconList[0].name} title={iconList[0].title} />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => navigation.navigate('Discussion', books.discussion)} >
+              <TouchableOpacity onPress={handleDiscussion} >
                 <DetailsCard nav={navigation} icon={iconList[1].name} title={iconList[1].title} />
               </TouchableOpacity>
 
@@ -78,7 +114,7 @@ const DetailsCategory = ({navigation, route}) => {
                 <DetailsCard nav={navigation}  icon={iconList[2].name} title={iconList[2].title} />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => navigation.navigate('Discussion', books.prayers)} >
+              <TouchableOpacity onPress={handlePrayer} >
                 <DetailsCard nav={navigation} icon={iconList[3].name} title={iconList[3].title} />
               </TouchableOpacity>
               
@@ -92,15 +128,15 @@ const DetailsCategory = ({navigation, route}) => {
         <View>
             <View style={style.bottomTabIconContainer}>
               <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
-                <Icon name='home' color={COLORS.gradientLight} size={30} />
-                <Text style={{color: COLORS.gradientLight }}>Prayers</Text>
+                <Icon name='home' color={COLORS.white} size={30} />
+                <Text style={{color: COLORS.white }}>Home</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('Quiz')}>
+              <TouchableOpacity onPress={handleQuiz}>
                 <Icon name='question-answer' color={COLORS.white} size={30} />
                 <Text style={{color: COLORS.white }}>Quiz</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => alert('Coming Soon...')} style={{alignItems: 'center',justifyContent: 'center',}}>
-                <Icon name='search' color={COLORS.white} size={30} />
+              <TouchableOpacity onPress={handlePrayerTab} style={{alignItems: 'center',justifyContent: 'center',}}>
+                <Icon name='people' color={COLORS.white} size={30} />
                 <Text style={{color: COLORS.white }}>Prayers</Text>
               </TouchableOpacity>
             </View>
