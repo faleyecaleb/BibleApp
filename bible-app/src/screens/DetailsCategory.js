@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet, StatusBar,ImageBackground, TouchableOpacity, Dimensions, SafeAreaView, Image, FlatList, ScrollView, } from 'react-native'
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import IMAGES from '../../src/consts/images'
 import COLORS from '../consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import DetailsCard from '../components/DetailsCard';
 import { AdMobInterstitial, AdMobRewarded } from 'expo-ads-admob';
+import { checkConnected } from '../../network';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
@@ -33,17 +34,28 @@ const instertitial = async () => {
 
 
 const DetailsCategory = ({navigation, route}) => {
+  const [connectStatus, setConnectStatus] = useState(false);
+  const [showNetworkError, setShowNetworkError] = useState(false)
+
+  checkConnected().then(res => {
+    setConnectStatus(res)
+  })
   const books = route.params;
   const iconList = [
     {name: 'info', title: 'Introduction'},
     {name: 'user', title: 'Discussion'},
     {name: 'comment', title: 'Conclusion'},
     {name: 'praying-hands', title: 'Our Prayers'},
-  ]
+  ];
 
   const handleQuiz = async () => {
-    await instertitial()
-    navigation.navigate('Quiz');
+    if (connectStatus) {
+      await instertitial()
+      navigation.navigate('Quiz');
+    } else{
+      alert('Oops...Check You Connection')
+    }
+    
 
   }
 

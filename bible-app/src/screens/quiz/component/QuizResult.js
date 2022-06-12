@@ -1,18 +1,19 @@
-import { View, Text, Button, Platform, StyleSheet } from 'react-native'
+import { View, Text, Button, ActivityIndicator, StyleSheet } from 'react-native'
 import React, {useState, useEffect} from 'react';
-import {
-  AdMobBanner,
-  AdMobInterstitial,
-  PublisherBanner,
-  AdMobRewarded,
-  setTestDeviceIDAsync,
-} from 'expo-ads-admob';
+import { AdMobBanner, AdMobInterstitial, PublisherBanner, AdMobRewarded, setTestDeviceIDAsync,} from 'expo-ads-admob';
 import COLORS from '../../../consts/colors';
+import { Audio } from 'expo-av';
 
-const time = 5
-const QuizResult = ({setStop,setScore, setQuestionNum, setTotalScore, score,totalScore, navigation}) => {
+const time = 3
+const QuizResult = ({setStop,setScore, setToNextLevel, setToTryAgain, toNextLevel, toTryAgain, setQuestionNum, setTotalScore, score,totalScore, navigation}) => {
   const [show, setShow] = useState(false)
   const [timer, setTimer] = useState(time);
+  const [sound, setSound] = React.useState();
+
+  useEffect(() => {
+    setToNextLevel((prev) => prev)
+    setToTryAgain((prev) => prev)
+  }, [])
 
   useEffect(() => {
     return () => AdMobRewarded.removeAllListeners();
@@ -52,11 +53,34 @@ const QuizResult = ({setStop,setScore, setQuestionNum, setTotalScore, score,tota
     loadAds()
   }, [])
 
+
+
+  async function playSound() {
+    // console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(
+       require('../../../sounds/play.mp3')
+    );
+    setSound(sound);
+
+    // console.log('Playing Sound');
+    await sound.playAsync(); }
+
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync(); }
+        : undefined;
+    }, [sound]);
+
+
   const tryAgain = async () => {
+    playSound()
+    setToTryAgain(false)
     setQuestionNum(1)
     setStop(false)
     setScore(0)
-    setTotalScore(0)
+    setTotalScore((prevScore) => prevScore - prevScore + 1)
     
   }
 
@@ -65,24 +89,47 @@ const QuizResult = ({setStop,setScore, setQuestionNum, setTotalScore, score,tota
     await navigation.popToTop()
     
   }
+
+  const nextLevel = async () => {
+    playSound()
+    setQuestionNum((prevNum) => prevNum + 1)
+    setToNextLevel(false)
+    setStop(false)
+    setScore(0)
+    setTotalScore((prevScore) => prevScore - prevScore + 1)
+  }
+  const theScore = Math.round((score/(totalScore - 1)) * 100)
   return (
     <View style={{flex: 1, justifyContent: 'center'}}>
       <View style={styles.container}>
         <View style={styles.containerResult}>
           <Text style={{fontSize: 20,color: 'white', fontWeight: 'bold', marginBottom: 20}}>Quiz Finished!!!</Text>
-          <Text style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>TOTAL QUESTIONS: {totalScore}</Text>
-          <Text style={{color: 'white'}}>You Got {score} out of {totalScore} Correctly</Text>
+          <Text style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>TOTAL QUESTIONS: {totalScore - 1}</Text>
+          <Text style={{color: 'white'}}>You Got {score} / {totalScore - 1 } Correctly</Text>
+          <Text style={{color: 'white', fontSize: 20}}>Score {theScore}%</Text>
         </View>
 
         {
           show ? 
-          <View style={styles.button}>
-          <Button title='Try Again' onPress={tryAgain}/>
-          <Button title='End Quiz' onPress={endQuiz} />
-        </View>
+          <View>
+            {toNextLevel &&
+              <View>
+                  <Button title='Next Level' onPress={nextLevel}/>
+              </View>
+            }
+            {toTryAgain && 
+            <View style={styles.button}>
+              <Button title='Try Again' onPress={tryAgain}/>
+              <Button title='End Quiz' onPress={endQuiz} />
+            </View>
+            }
+        
+            
+            
+            </View>
         :
         <View style={styles.timeContainer}>
-          <Text style={{color: COLORS.white}}>Loading...</Text>
+          <ActivityIndicator size="large" color={COLORS.white} />
         </View>
         }
 

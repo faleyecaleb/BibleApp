@@ -1,8 +1,10 @@
-import { View, Text, SafeAreaView, ImageBackground, StyleSheet, Dimensions, StatusBar, FlatList , Button} from 'react-native'
-import React from 'react'
+import { View, Text, SafeAreaView, ImageBackground, StyleSheet, TouchableOpacity, Dimensions, StatusBar, FlatList , Button} from 'react-native'
+import React, {useEffect} from 'react'
 import Money from './component/QuizResult'
 import COLORS from '../../consts/colors';
 import Questions from './Questions';
+
+import { AdMobRewarded, AdMobBanner } from 'expo-ads-admob';
 
 
 const height = Dimensions.get('screen').height;
@@ -27,14 +29,51 @@ const height = Dimensions.get('screen').height;
 
 const Quiz = ({navigation}) => {
   const img = require('../../assets/images/quizImg.jpg');
+  const [toStartQuiz, setToStartQuiz] = React.useState(false)
+  
+
+  const loadAds = async () => {
+    await AdMobRewarded.setAdUnitID('ca-app-pub-3940256099942544/5224354917');
+    try {
+      await AdMobRewarded.requestAdAsync();
+      await AdMobRewarded.showAdAsync();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const startQuiz = async () => {
+    await loadAds()
+    setToStartQuiz(true)
+  }
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{position:'relative'}}>
       <StatusBar animated={true} backgroundColor={COLORS.dark} barStyle={'light-content'} />
       <ImageBackground resizeMode='cover' style={styles.backgrounImage} source={img}>
+      <AdMobBanner style={{position: 'absolute'}}
+          bannerSize="fullBanner"
+          adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
+          /> 
+
         
-        <View style={{height: '100%'}} >
+        
+        {toStartQuiz && <View style={{height: '100%'}} >
           <Questions navigation={navigation} />
-        </View>
+        </View>}
+      <TouchableOpacity  onPress={startQuiz}>
+        <Text style={styles.card}>Start Quiz</Text>
+      </TouchableOpacity>
+      {
+        !toStartQuiz && 
+        <View style={styles.card}>
+        <Button title='Start Quiz' onPress={startQuiz} />
+      </View>
+      }
+     
+
+        
+        
+        
       </ImageBackground>
     </SafeAreaView>
   )
@@ -43,7 +82,24 @@ const Quiz = ({navigation}) => {
 const styles = StyleSheet.create({
   backgrounImage: {
     height: height
-  }
+  },
+
+  cardContainer:{
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  card:{
+    backgroundColor: 'white',
+    padding: 25,
+    position: 'absolute',
+    top: height * 0.5,
+    elevation: 10,
+    borderRadius: 10,
+    color: COLORS.dark,
+    fontSize: 20,
+    alignSelf: 'center'
+  },
 })
 
 export default Quiz

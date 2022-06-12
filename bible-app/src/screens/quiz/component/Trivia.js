@@ -1,13 +1,17 @@
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import COLORS from '../../../consts/colors'
-import PopUp from './Modal';
+import { Audio } from 'expo-av';
 
-const totalQuestion = 4;
-const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestionNum, questionNum}) => {
+
+
+const totalQuestion = 3;
+const Trivia = ({data, setToNextLevel, setToTryAgain, setTotalScore,score, totalScore, setScore, setStop, setQuestionNum, questionNum}) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState(styles.answerCorrect);
+  const [sound, setSound] = React.useState();
+  
   
 
   React.useEffect(() => {
@@ -15,12 +19,6 @@ const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestion
 
     return () => setQuestion(null)
   },[data, questionNum]);
-
-  // React.useEffect(() => {
-    
-
-    
-  // }, [totalScore])
 
   const Answers = ({questions}) => {
     return(
@@ -33,11 +31,57 @@ const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestion
       
     )
   }
+  
+  async function playCorrectSound() {
+    // console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(
+       require('../../../sounds/correct.mp3')
+    );
+    setSound(sound);
+
+    // console.log('Playing Sound');
+    await sound.playAsync(); }
+
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync(); }
+        : undefined;
+    }, [sound]);
+
+
+  async function playWrongSound() {
+    // console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(
+       require('../../../sounds/wrong.mp3')
+    );
+    setSound(sound);
+
+    // console.log('Playing Sound');
+    await sound.playAsync(); }
+
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync(); }
+        : undefined;
+    }, [sound]);
+
+
 
   const handleClick = async (a) => {
-    setTotalScore(totalScore + 1)
+    await setTotalScore((prevScore) => prevScore + 1)
 
-    if (totalScore === totalQuestion) {
+    if (totalScore === totalQuestion ) {
+      const result = (score/totalQuestion) * 100;
+      if(Math.round(result) >= 50) {
+        setToNextLevel(true)
+      } else{
+        setToTryAgain(true)
+      }
+
       setStop(true)
     } else {
       setSelectedAnswer(a);
@@ -49,26 +93,28 @@ const Trivia = ({data, setTotalScore, totalScore, setScore, setStop, setQuestion
     
     
 
-    await const check = () => {
+    setTimeout(() => {
       if (a.correct) {
-        setScore(questionNum)
+        playCorrectSound()
+        setScore((prevScore) => prevScore + 1)
         setQuestionNum((prevNum) => prevNum + 1)
         setSelectedAnswer(null)
         
       } else{
+        playWrongSound()
         setQuestionNum((prevNum) => prevNum + 1)
         // setStop(true)
       }
-    }
-
-    
+    }, 1000)
   }
-
 
   return (
     <View style={styles.trivia}>
-      <View style={styles.questions}>
-        <Text style={{color: COLORS.red, width: 30, fontSize: 25, }}>{question?.id})</Text>
+      <View style={styles.questionsContainer}>
+        <View style={styles.questions}>
+          <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>QUESTION:</Text>
+          <Text style={{fontSize: 18, color: COLORS.white}}>{totalScore }/{totalQuestion}</Text>
+        </View>
         <Text style={{color: COLORS.white, fontSize: 20}}>{question?.question}?</Text>
       </View>
 
@@ -89,11 +135,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
-    bottom: 40,
+    // bottom: 40,
     width: '100%',
-    paddingVertical: 20
+    paddingVertical: 20,
+    
   },
-  questions: {
+  questionsContainer: {
     width: '100%',
     backgroundColor: COLORS.dark,
     borderWidth: 2,
@@ -102,10 +149,22 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     marginBottom: 20,
-    flexDirection: 'row',
-    justifyContent: 'center'
-    
+    // justifyContent: 'center'
   },
+
+  questions: {
+    color: COLORS.red, 
+    fontSize: 25,
+    marginTop: -45,
+    backgroundColor: 'darkblue',
+    elevation: 10,
+    padding: 5,
+    borderRadius: 40,
+    width: '50%',
+    alignItems: 'center',
+    marginBottom: 5
+  },
+
   answers: {
     flexDirection: 'row',
     width: '100%',
@@ -114,10 +173,10 @@ const styles = StyleSheet.create({
   
   answersText: {
     backgroundColor: COLORS.dark,
-    padding: 15,
+    padding: 7,
     margin: 3,
     width: '85%',
-    borderRadius: 5,
+    borderRadius: 50,
     textAlign: 'center',
     elevation: 5,
     borderBottomWidth: 4,
