@@ -5,7 +5,7 @@ import { Audio } from 'expo-av';
 
 
 
-const totalQuestion = 3;
+const totalQuestion = 10;
 const Trivia = ({data, setToNextLevel, setToTryAgain, setTotalScore,score, totalScore, setScore, setStop, setQuestionNum, questionNum}) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -24,8 +24,8 @@ const Trivia = ({data, setToNextLevel, setToTryAgain, setTotalScore,score, total
     return(
       <View style={styles.answers}>
         <View style={selectedAnswer === questions ? className : styles.answersText}>
-          <Text style={{color: 'white'}}>$</Text>
-          <Text style={{color: COLORS.white, fontSize: 18, textAlign: 'center'}}>{questions.answer}</Text>
+          <Text style={{color: COLORS.blue, fontSize: 18, marginHorizontal: 10}}>{questions.answer.letter}</Text>
+          <Text style={{color: COLORS.white, fontSize: 18, }}>{questions.answer.text}</Text>
         </View>
       </View>
       
@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingVertical: 20,
     
+    
   },
   questionsContainer: {
     width: '100%',
@@ -173,14 +174,16 @@ const styles = StyleSheet.create({
   
   answersText: {
     backgroundColor: COLORS.dark,
-    padding: 7,
-    margin: 3,
-    width: '85%',
+    padding: 10,
+    margin: 10,
+    width: '90%',
+    flexDirection: 'row',
     borderRadius: 50,
     textAlign: 'center',
     elevation: 5,
     borderBottomWidth: 4,
-    borderBottomColor: 'white'
+    borderBottomColor: 'white',
+
   },
 
   answerCorrect: {

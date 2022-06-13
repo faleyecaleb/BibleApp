@@ -50,7 +50,6 @@ const DetailsCategory = ({navigation, route}) => {
 
   const handleQuiz = async () => {
     if (connectStatus) {
-      await instertitial()
       navigation.navigate('Quiz');
     } else{
       alert('Oops...Check You Connection')

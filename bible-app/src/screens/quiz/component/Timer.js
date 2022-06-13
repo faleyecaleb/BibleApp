@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React, {useState, useEffect} from 'react'
 
-const time = 20;
+const time = 10;
 const Timer = ({setStop,  setTotalScore, totalScore, score, setScore, questionNum, setQuestionNum}) => {
   const [timer, setTimer] = useState(time);
 
