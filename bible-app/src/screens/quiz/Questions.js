@@ -5,7 +5,6 @@ import Trivia from './component/Trivia'
 import quizData from './data'
 import Timer from './component/Timer';
 import QuizResult from './component/QuizResult'
-import PopUp from './component/Modal'
 import { Audio } from 'expo-av';
 
 const Questions = ({setIsTrue,navigation}) => {
@@ -30,9 +29,10 @@ const Questions = ({setIsTrue,navigation}) => {
   }
 
   useEffect(() => {
+    shuffleQuiz(quizData)
     setQuizList(shuffleQuiz(quizData))
     console.log(quizList);
-  }, [])
+  }, [questionNum])
 
   async function playSound() {
     // console.log('Loading Sound');

@@ -1,10 +1,10 @@
 import { View, Text, Button, ActivityIndicator, StyleSheet } from 'react-native'
 import React, {useState, useEffect} from 'react';
-import { AdMobBanner, AdMobInterstitial, PublisherBanner, AdMobRewarded, setTestDeviceIDAsync,} from 'expo-ads-admob';
+import { AdMobRewarded } from 'expo-ads-admob';
 import COLORS from '../../../consts/colors';
 import { Audio } from 'expo-av';
 
-const time = 3
+const time = 5
 const QuizResult = ({setStop,setScore, setToNextLevel, setToTryAgain, toNextLevel, toTryAgain, setQuestionNum, setTotalScore, score,totalScore, navigation}) => {
   const [show, setShow] = useState(false)
   const [timer, setTimer] = useState(time);
@@ -81,7 +81,6 @@ const QuizResult = ({setStop,setScore, setToNextLevel, setToTryAgain, toNextLeve
     setStop(false)
     setScore(0)
     setTotalScore((prevScore) => prevScore - prevScore + 1)
-    
   }
 
   const endQuiz = async () => {
@@ -92,10 +91,10 @@ const QuizResult = ({setStop,setScore, setToNextLevel, setToTryAgain, toNextLeve
 
   const nextLevel = async () => {
     playSound()
-    setQuestionNum((prevNum) => prevNum + 1)
     setToNextLevel(false)
     setStop(false)
     setScore(0)
+    setQuestionNum(1)
     setTotalScore((prevScore) => prevScore - prevScore + 1)
   }
   const theScore = Math.round((score/(totalScore - 1)) * 100)
@@ -114,7 +113,7 @@ const QuizResult = ({setStop,setScore, setToNextLevel, setToTryAgain, toNextLeve
           <View>
             {toNextLevel &&
               <View>
-                  <Button title='Next Level' onPress={nextLevel}/>
+                  <Button title='Play Quiz Again👍' onPress={nextLevel}/>
               </View>
             }
             {toTryAgain && 

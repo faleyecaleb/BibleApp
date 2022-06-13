@@ -29,7 +29,8 @@
     "expo-speech": "~10.2.0",
     "expo-ads-admob": "~13.0.0",
     "expo-av": "~11.2.3",
-    "@react-native-community/netinfo": "8.2.0"
+    "@react-native-community/netinfo": "8.2.0",
+    "expo-updates": "~0.13.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

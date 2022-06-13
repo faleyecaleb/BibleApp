@@ -5,7 +5,7 @@ import { Audio } from 'expo-av';
 
 
 
-const totalQuestion = 10;
+const totalQuestion = 15;
 const Trivia = ({data, setToNextLevel, setToTryAgain, setTotalScore,score, totalScore, setScore, setStop, setQuestionNum, questionNum}) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -132,12 +132,12 @@ const Trivia = ({data, setToNextLevel, setToTryAgain, setTotalScore,score, total
 const styles = StyleSheet.create({
   trivia: {
     backgroundColor: 'darkblue',
-    position: 'absolute',
+    // position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
     // bottom: 40,
     width: '100%',
-    paddingVertical: 20,
+    paddingVertical: 40,
     
     
   },
@@ -150,13 +150,13 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     marginBottom: 20,
+    marginTop: -120,
     // justifyContent: 'center'
   },
 
   questions: {
-    color: COLORS.red, 
     fontSize: 25,
-    marginTop: -45,
+    marginTop: -60,
     backgroundColor: 'darkblue',
     elevation: 10,
     padding: 5,

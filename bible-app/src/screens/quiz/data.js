@@ -390,133 +390,133 @@ const quizData = [
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 40,
+    question: 'Where in the New Testament does it talk about the perseverance of Job',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'The book of Hebrews'}, correct: false},
+      {answer: {letter: 'B', text: 'Revelation'}, correct: false},
+      {answer: {letter: 'C', text: '2 Timothy'}, correct: false},
+      {answer: {letter: 'D', text: 'James'}, correct: true},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 41,
+    question: 'What does Jesus say about judging others',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'judge fairly'}, correct: false},
+      {answer: {letter: 'B', text: 'judge justly'}, correct: false},
+      {answer: {letter: 'C', text: 'judge not'}, correct: true},
+      {answer: {letter: 'D', text: 'judge Judy'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 42,
+    question: `“The _____ _____ of the wise are more to be heeded than the shouts of a ruler of fools.” `,
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'true sayings'}, correct: false},
+      {answer: {letter: 'B', text: 'quiet words'}, correct: true},
+      {answer: {letter: 'C', text: 'harsh rebukes'}, correct: false},
+      {answer: {letter: 'D', text: 'silent prayers'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 43,
+    question: 'What were the two plagues that afflicted the Egyptians physically',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'gnats and blisters'}, correct: false},
+      {answer: {letter: 'B', text: 'boils and hives'}, correct: false},
+      {answer: {letter: 'C', text: 'dandruff and hives '}, correct: false},
+      {answer: {letter: 'D', text: 'gnats and boils'}, correct: true},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 44,
+    question: 'Fill in the blank: “In the same way, ___ are to be worthy of respect, sincere, not indulging in much wine, and not pursuing dishonest gain',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'husbands'}, correct: false},
+      {answer: {letter: 'B', text: 'postal workers'}, correct: false},
+      {answer: {letter: 'C', text: 'wives'}, correct: false},
+      {answer: {letter: 'D', text: 'deacons'}, correct: true},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 45,
+    question: 'What did the mysterious hand write on the wall at King Belshazzar’s banquet',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'Eli Eli Lama Sabachthani'}, correct: false},
+      {answer: {letter: 'B', text: 'Jehovah-Jireh'}, correct: false},
+      {answer: {letter: 'C', text: 'Mene, Mene, Tekel, Parsin'}, correct: true},
+      {answer: {letter: 'D', text: 'Shadrach Meshach and Abednego'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 46,
+    question: 'How many of each animal did Moses bring into the Ark',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'None'}, correct: true},
+      {answer: {letter: 'B', text: 'Three'}, correct: false},
+      {answer: {letter: 'C', text: 'Seven'}, correct: false},
+      {answer: {letter: 'D', text: 'Fifteen'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 47,
+    question: 'Which tribe was Paul from',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'Tribe Of Judah'}, correct: false},
+      {answer: {letter: 'B', text: 'Tribe of Moses'}, correct: false},
+      {answer: {letter: 'C', text: 'Tribe of Benjamin '}, correct: true},
+      {answer: {letter: 'D', text: 'Tribe of the Jews'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 48,
+    question: 'Which Babylonian emperor let the Israelites return to their homeland',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'Emperor Cyrus the Great'}, correct: true},
+      {answer: {letter: 'B', text: 'Pilate'}, correct: false},
+      {answer: {letter: 'C', text: 'Herod'}, correct: false},
+      {answer: {letter: 'D', text: 'Pharoah the mighty'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 49,
+    question: `What name was given to the Jewish ruling council that plotted Jesus’ death`,
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'The Sadducees'}, correct: false},
+      {answer: {letter: 'B', text: 'The Pharisees'}, correct: false},
+      {answer: {letter: 'C', text: 'The Sanhedrin '}, correct: true},
+      {answer: {letter: 'D', text: 'The Priests'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 50,
+    question: 'How many books did Paul write in the Bible',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: '12'}, correct: false},
+      {answer: {letter: 'B', text: '17'}, correct: false},
+      {answer: {letter: 'C', text: '13'}, correct: true},
+      {answer: {letter: 'D', text: '21'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 51,
+    question: 'Who was the father of Jesus',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: 'Joseph'}, correct: false},
+      {answer: {letter: 'B', text: 'GOD'}, correct: true},
+      {answer: {letter: 'C', text: 'Holy Spirit'}, correct: false},
+      {answer: {letter: 'D', text: 'Jesus'}, correct: false},
     ]
   },
   {
-    id: 21,
-    question: 'Name one of the five books in the Bible that contain only one chapter',
+    id: 52,
+    question: 'At what age did Sarah, the wife of Abraham, die',
     answers: [
-      {answer: {letter: 'A', text: 'John'}, correct: false},
-      {answer: {letter: 'B', text: 'Titus'}, correct: false},
-      {answer: {letter: 'C', text: 'Habakkuk '}, correct: false},
-      {answer: {letter: 'D', text: 'Obadiah'}, correct: true},
+      {answer: {letter: 'A', text: '121'}, correct: true},
+      {answer: {letter: 'B', text: '100'}, correct: false},
+      {answer: {letter: 'C', text: '90'}, correct: false},
+      {answer: {letter: 'D', text: '97'}, correct: false},
     ]
   },
 ]

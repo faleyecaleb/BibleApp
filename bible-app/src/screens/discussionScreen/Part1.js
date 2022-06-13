@@ -5,8 +5,6 @@ import { myBooks } from './Discussions';
 import { UserContext } from './UserContext';
 import {
   AdMobBanner,
-  AdMobInterstitial,
-  AdMobRewarded,
 } from 'expo-ads-admob';
 
 
@@ -36,10 +34,23 @@ const Part1 = () => {
         <Text selectable={true} style={{fontSize: 16, textAlign: 'left', lineHeight: 35, paddingBottom: 50, marginBottom: 100}}>{msg.content}</Text>   
       </ScrollView>
       }
-      <AdMobBanner style={{position: 'absolute', top: '91%'}}
-          bannerSize="fullBanner"
+      <View style={{
+        shadowOffset: {width: 5, height: 5},
+        borderRadius: 5,
+        alignSelf: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 4,
+      
+      }}>
+        <AdMobBanner
+          bannerSize="smartBanner"
           adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
-          /> 
+          servePersonalizedAds // true or false
+          onDidFailToReceiveAdWithError={(e) => console.log(e)} />
+      </View>
+     
     </View>
   )
 

@@ -3,6 +3,7 @@ import React, {useEffect} from 'react'
 import Money from './component/QuizResult'
 import COLORS from '../../consts/colors';
 import Questions from './Questions';
+import { checkConnected } from '../../../network';
 
 import { AdMobRewarded, AdMobBanner } from 'expo-ads-admob';
 
@@ -30,6 +31,22 @@ const height = Dimensions.get('screen').height;
 const Quiz = ({navigation}) => {
   const img = require('../../assets/images/quizImg.jpg');
   const [toStartQuiz, setToStartQuiz] = React.useState(false)
+  const [connectStatus, setConnectStatus] = React.useState(false);
+
+  checkConnected().then(res => {
+    setConnectStatus(res)
+  })
+
+
+  const handleQuiz = async () => {
+    if (connectStatus) {
+      navigation.navigate('Quiz');
+    } else{
+      alert('Oops...Check You Connection')
+    }
+    
+
+  }
   
 
   const loadAds = async () => {
@@ -43,26 +60,41 @@ const Quiz = ({navigation}) => {
   }
 
   const startQuiz = async () => {
-    await loadAds()
-    setToStartQuiz(true)
+    if (connectStatus) {
+      await loadAds()
+      setToStartQuiz(true);
+    } else{
+      alert('Oops...Check You Connection')
+    }
+    
   }
   return (
     <SafeAreaView style={{position:'relative'}}>
       <StatusBar animated={true} backgroundColor={COLORS.dark} barStyle={'light-content'} />
       <ImageBackground resizeMode='cover' style={styles.backgrounImage} source={img}>
-      <AdMobBanner style={{position: 'absolute'}}
-          bannerSize="fullBanner"
+      <View style={{
+        shadowOffset: {width: 5, height: 5},
+        borderRadius: 5,
+        alignSelf: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        marginTop: 4,
+        marginBottom: 4,
+      
+      }}>
+        <AdMobBanner
+          bannerSize="smartBanner"
           adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
-          /> 
+          servePersonalizedAds // true or false
+          onDidFailToReceiveAdWithError={(e) => console.log(e)} />
+      </View> 
 
         
         
         {toStartQuiz && <View style={{height: '100%'}} >
           <Questions navigation={navigation} />
         </View>}
-      <TouchableOpacity  onPress={startQuiz}>
-        <Text style={styles.card}>Start Quiz</Text>
-      </TouchableOpacity>
+    
       {
         !toStartQuiz && 
         <View style={styles.card}>
