@@ -6,7 +6,7 @@ import { AdMobRewarded } from 'expo-ads-admob';
 
 
 const adUnits = { realId: "ca-app-pub-3102229267647171/9215298789", testId: "ca-app-pub-3940256099942544/5224354917" }
-const totalQuestion = 3;
+const totalQuestion = 15;
 const Trivia = ({ data, isLoading, setIsLoading, setToNextLevel, rewardedCoins, setRewardedCoins, setToTryAgain, setTotalScore, score, totalScore, setScore, setStop, setQuestionNum, questionNum }) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -149,8 +149,8 @@ const Trivia = ({ data, isLoading, setIsLoading, setToNextLevel, rewardedCoins, 
     <View style={styles.trivia}>
       <View style={styles.questionsContainer}>
         <View style={styles.questions}>
-          <Text style={{ color: COLORS.dark, fontSize: 18, fontWeight: 'bold' }}>Question:</Text>
-          <Text style={{ fontSize: 18, color: COLORS.dark }}>{totalScore}/{totalQuestion}</Text>
+          <Text style={{ color: COLORS.grey, fontSize: 18, fontWeight: 'bold' }}>Question:</Text>
+          <Text style={{ fontSize: 18, color: COLORS.grey }}>{totalScore}/{totalQuestion}</Text>
         </View>
         <Text style={{ color: COLORS.white, fontSize: 20 }}>{question?.question}?</Text>
       </View>
@@ -181,7 +181,8 @@ const styles = StyleSheet.create({
   questionsContainer: {
     width: '100%',
     backgroundColor: COLORS.dark,
-    borderWidth: 2,
+    borderBottomWidth: 2,
+    borderTopWidth: 2,
     borderColor: COLORS.white,
     borderRadius: 5,
     padding: 20,
@@ -196,12 +197,12 @@ const styles = StyleSheet.create({
     marginTop: -60,
     backgroundColor: 'white',
     elevation: 10,
-    borderRadius: 40,
+    borderRadius: 10,
     alignItems: 'center',
     marginBottom: 5,
     paddingHorizontal: 30,
     paddingVertical: 5,
-    borderColor: COLORS.gradientLight,
+    borderColor: COLORS.grey,
     borderWidth: 1
   },
 

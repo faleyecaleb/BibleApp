@@ -2,7 +2,7 @@ import { View } from 'react-native'
 import { useState, useEffect } from 'react'
 
 const totalQuestion = 15
-const theTime = 499
+const theTime = 15
 const Timer = ({ setStop, time, setToTryAgain, setTime, setToNextLevel, setTotalScore, totalScore, score, questionNum, setQuestionNum }) => {
   const [timer, setTimer] = useState(theTime);
 

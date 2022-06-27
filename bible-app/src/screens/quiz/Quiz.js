@@ -9,7 +9,7 @@ import { AdMobRewarded, AdMobBanner, AdMobInterstitial } from 'expo-ads-admob';
 
 const height = Dimensions.get('screen').height;
 // =============================== INTERSTITIAL ADS ===========================
-const adUnits = { realId: "ca-app-pub-3102229267647171/6739224971", testId: "ca-app-pub-3940256099942544/1033173712" }
+const adUnits = { realId: "ca-app-pub-3102229267647171/6739224971", testId: "ca-app-pub-3940256099942544/6300978111" }
 const adUnitsRewarded = { realId: "ca-app-pub-3102229267647171/9215298789", testId: "ca-app-pub-3940256099942544/5224354917" }
 
 const instertitial = async () => {
@@ -144,28 +144,16 @@ const Quiz = ({ navigation }) => {
   }
   return (
     <SafeAreaView style={{ position: 'relative' }}>
-      <StatusBar animated={true} backgroundColor={COLORS.dark} barStyle={'light-content'} />
+      <StatusBar animated={true} translucent={false} backgroundColor={COLORS.dark} barStyle={'light-content'} />
       <ImageBackground resizeMode='cover' style={styles.backgrounImage} source={img}>
         <View style={{
-          shadowOffset: { width: 5, height: 5 },
-          borderRadius: 5,
-          alignSelf: 'center',
-          alignContent: 'center',
-          alignItems: 'center',
-          marginBottom: 5,
-
+          position: 'relative', flex: 1, alignItems: 'center',
         }}>
-          {/* <BannerAd
-            unitId={adUnitId}
-            size={BannerAdSize.FULL_BANNER}
-            requestOptions={{
-              requestNonPersonalizedAdsOnly: true,
-            }}
-          /> */}
-          <AdMobBanner
+          < AdMobBanner
+            style={{ position: 'absolute', top: 0, }}
             bannerSize="fullBanner"
             adUnitID={adUnits.testId} // Test ID, Replace with your-admob-unit-id
-            servePersonalizedAds={true} // true or false
+            servePersonalizedAds={false} // true or false
           />
         </View>
 
@@ -191,20 +179,15 @@ const Quiz = ({ navigation }) => {
           </View>
         }
 
-
-
-
-
-
-
       </ImageBackground>
-    </SafeAreaView>
+    </SafeAreaView >
   )
 }
 
 const styles = StyleSheet.create({
   backgrounImage: {
-    height: height
+    height: height,
+    position: 'relative'
   },
 
   cardContainer: {

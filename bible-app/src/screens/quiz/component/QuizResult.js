@@ -132,7 +132,7 @@ const QuizResult = ({ isLoading, setIsLoading, setStop, show, setShow, setScore,
 
   const endQuiz = () => {
     setIsLoading(true)
-    navigation.popToTop()
+    navigation.navigate('HomeScreen')
     setIsLoading(false)
 
   }

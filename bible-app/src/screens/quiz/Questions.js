@@ -137,6 +137,7 @@ const Questions = ({ navigation, rewardedCoins, setRewardedCoins }) => {
                 <TouchableOpacity onPress={handleNextQuestion} style={{
                   backgroundColor: COLORS.white,
                   paddingHorizontal: 10,
+                  paddingVertical: 5,
                   elevation: 10,
                   flexDirection: 'row',
                   alignItems: 'center',
@@ -145,21 +146,8 @@ const Questions = ({ navigation, rewardedCoins, setRewardedCoins }) => {
 
                 }}>
                   <Icon name='reload-circle' size={20} color={COLORS.dark} />
-                  <Text style={{ color: 'green', fontSize: 16 }}>(+5) Skip</Text>
+                  <Text style={{ color: 'green', fontSize: 16 }}>($5) Skip Question</Text>
                 </TouchableOpacity>
-
-                {/* <TouchableOpacity onPress={handleTimer} style={{
-                  backgroundColor: COLORS.red,
-                  paddingHorizontal: 10,
-                  paddingVertical: 5,
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  borderRadius: 50,
-
-                }}>
-                  <Icon name='timer' size={20} color='white' />
-                  <Text style={{ color: COLORS.white, fontSize: 16 }}>($5) Increase Time</Text>
-                </TouchableOpacity> */}
               </View>
             </View>
 
