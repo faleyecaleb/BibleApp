@@ -6,7 +6,7 @@ import { Audio } from 'expo-av';
 import { checkConnected } from '../../../../network';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const adUnits = { realId: "ca-app-pub-3102229267647171/9215298789", testId: "ca-app-pub-3940256099942544/5224354917" }
+const adUnits = { realId: "", testId: "ca-app-pub-3940256099942544/5224354917" }
 const time = 5
 const QuizResult = ({ isLoading, setIsLoading, setStop, show, setShow, setScore, setToNextLevel, setToTryAgain, toNextLevel, toTryAgain, setQuestionNum, setTotalScore, score, totalScore, navigation, setRewardedCoins, rewardedCoins }) => {
   const [timer, setTimer] = useState(time);

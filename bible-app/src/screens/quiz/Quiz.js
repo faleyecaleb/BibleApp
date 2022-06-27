@@ -9,8 +9,8 @@ import { AdMobRewarded, AdMobBanner, AdMobInterstitial } from 'expo-ads-admob';
 
 const height = Dimensions.get('screen').height;
 // =============================== INTERSTITIAL ADS ===========================
-const adUnits = { realId: "ca-app-pub-3102229267647171/6739224971", testId: "ca-app-pub-3940256099942544/6300978111" }
-const adUnitsRewarded = { realId: "ca-app-pub-3102229267647171/9215298789", testId: "ca-app-pub-3940256099942544/5224354917" }
+const adUnits = { realId: "", testId: "ca-app-pub-3940256099942544/6300978111" }
+const adUnitsRewarded = { realId: "", testId: "ca-app-pub-3940256099942544/5224354917" }
 
 const instertitial = async () => {
   await AdMobInterstitial.setAdUnitID(adUnits.testId); // Test ID, Replace with your-admob-unit-id

@@ -7,7 +7,6 @@ import Timer from './component/Timer';
 import QuizResult from './component/QuizResult'
 import { Audio } from 'expo-av';
 import Icon from 'react-native-vector-icons/Ionicons'
-import { AdMobRewarded } from 'expo-ads-admob'
 
 const Questions = ({ navigation, rewardedCoins, setRewardedCoins }) => {
   const [stop, setStop] = useState(false);

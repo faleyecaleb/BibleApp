@@ -5,7 +5,7 @@ import { Audio } from 'expo-av';
 import { AdMobRewarded } from 'expo-ads-admob';
 
 
-const adUnits = { realId: "ca-app-pub-3102229267647171/9215298789", testId: "ca-app-pub-3940256099942544/5224354917" }
+const adUnits = { realId: "", testId: "ca-app-pub-3940256099942544/5224354917" }
 const totalQuestion = 15;
 const Trivia = ({ data, isLoading, setIsLoading, setToNextLevel, rewardedCoins, setRewardedCoins, setToTryAgain, setTotalScore, score, totalScore, setScore, setStop, setQuestionNum, questionNum }) => {
   const [question, setQuestion] = useState(null);

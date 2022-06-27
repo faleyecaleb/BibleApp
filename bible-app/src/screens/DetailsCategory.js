@@ -5,12 +5,12 @@ import COLORS from '../consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import DetailsCard from '../components/DetailsCard';
 import { AdMobInterstitial } from 'expo-ads-admob';
-// import { InterstitialAd, useRewardedInterstitialAd, RewardedAd, BannerAd, TestIds, BannerAdSize } from 'react-native-google-mobile-ads';
+
 import { checkConnected } from '../../network';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
-const adUnits = { realId: "ca-app-pub-3102229267647171/6739224971", testId: "ca-app-pub-3940256099942544/1033173712" }
+const adUnits = { realId: "", testId: "ca-app-pub-3940256099942544/1033173712" }
 
 const instertitial = async () => {
   await AdMobInterstitial.setAdUnitID(adUnits.testId); // Test ID, Replace with your-admob-unit-id
