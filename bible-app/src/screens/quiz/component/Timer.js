@@ -1,18 +1,34 @@
-import { View, Text } from 'react-native'
-import React, {useState, useEffect} from 'react'
+import { View } from 'react-native'
+import { useState, useEffect } from 'react'
 
-const time = 10;
-const Timer = ({setStop,  setTotalScore, totalScore, score, setScore, questionNum, setQuestionNum}) => {
-  const [timer, setTimer] = useState(time);
+const totalQuestion = 15
+const theTime = 499
+const Timer = ({ setStop, time, setToTryAgain, setTime, setToNextLevel, setTotalScore, totalScore, score, questionNum, setQuestionNum }) => {
+  const [timer, setTimer] = useState(theTime);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer(timer - 1)
       if (timer === 0) {
-        setQuestionNum((prev) => prev + 1)
-        setTotalScore((prevScore) => prevScore + 1)
-        setTimer(time)
-        
+        if (totalScore === totalQuestion) {
+          const result = (score / totalQuestion) * 100;
+          if (Math.round(result) >= 50) {
+            setToNextLevel(true)
+          } else {
+            setToTryAgain(true)
+          }
+          setStop(true)
+          // setShow(true)
+          setTimer(0)
+        } else {
+          setQuestionNum((prev) => prev + 1)
+          setTotalScore((prevScore) => prevScore + 1)
+          setTimer(theTime)
+        }
+      }
+      if (time) {
+        setTimer(prev => prev + 10)
+        setTime(false)
       }
     }, 1000)
 
@@ -21,8 +37,8 @@ const Timer = ({setStop,  setTotalScore, totalScore, score, setScore, questionNu
     )
   })
 
-  useEffect(()=> {
-    setTimer(time)
+  useEffect(() => {
+    setTimer(theTime)
   }, [questionNum])
   return timer
 }

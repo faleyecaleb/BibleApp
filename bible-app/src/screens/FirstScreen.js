@@ -1,28 +1,31 @@
 import * as React from 'react';
-import { StatusBar, FlatList, Image, Animated, Text, View, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
+import { StatusBar, FlatList, Image, Animated, Text, ImageBackground, View, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import COLORS from '../consts/colors';
 const { width, height } = Dimensions.get('screen');
 
-
 const data = [
-  'https://cdn.dribbble.com/users/3281732/screenshots/11192830/media/7690704fa8f0566d572a085637dd1eee.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/13130602/media/592ccac0a949b39f058a297fd1faa38e.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/9165292/media/ccbfbce040e1941972dbc6a378c35e98.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/11205211/media/44c854b0a6e381340fbefe276e03e8e4.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/7003560/media/48d5ac3503d204751a2890ba82cc42ad.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/6727912/samji_illustrator.jpeg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/13661330/media/1d9d3cd01504fa3f5ae5016e5ec3a313.jpg?compress=1&resize=1200x1200'
+  { image: require('../../src/assets/images/about.jpg'), text: 'English Version', navigate: 'HomeScreen' },
+  { image: require('../../src/assets/images/yoruba.jpg'), text: 'Yoruba Version', navigate: 'Yoruba' },
+  { image: require('../../src/assets/images/quiz.jpg'), text: 'Play Quiz', navigate: 'Quiz' },
+  { image: require('../../src/assets/images/image1.jpg'), text: 'About Us', navigate: 'About' },
 
 ];
 
 const imageW = width * 0.7;
 const imageH = imageW * 1.54;
 
-const FirstScreen = () => {
+const FirstScreen = ({ navigation }) => {
+  const handleNavigaion = (e) => {
+    navigation.navigate(e)
+  }
   const scrollX = React.useRef(new Animated.Value(0)).current;
+
   return (
     <View style={{ flex: 1, backgroundColor: '#000' }}>
-      <StatusBar animated={true} />
+      <StatusBar barStyle={'dark-content'} animated={true} translucent backgroundColor={COLORS.transparent} />
       <View style={StyleSheet.absoluteFillObject}>
+
         {
           data.map((image, index) => {
             const inputRange = [
@@ -34,45 +37,88 @@ const FirstScreen = () => {
               inputRange,
               outputRange: [0, 1, 0]
             })
-            return <Animated.Image 
-                  key={`image-${index}`}
-                  source={{uri: image}}
-                  style={[
-                    StyleSheet.absoluteFillObject,
-                    {
-                      opacity
-                    }
-                  ]}
-                  blurRadius={50}
+            return <Animated.Image
+              key={`image-${index}`}
+              source={image.image}
+              resizeMode={'contain'}
+              style={[
+                StyleSheet.absoluteFillObject,
+                {
+                  opacity
+                }
+              ]}
+              blurRadius={40}
             />
+
           })
+
         }
       </View>
       <Animated.FlatList
-      horizontal
-      pagingEnabled
-      onScroll={Animated.event(
-        [{nativeEvent: {contentOffset: {x: scrollX}}}],
-        {useNativeDriver: true}
-      )}
+        horizontal
+        pagingEnabled
+        onScroll={
+          Animated.event(
+            [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+            { useNativeDriver: true }
+          )
+
+        }
         data={data}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({item}) => {
-          return <View style={{width, justifyContent: 'center', alignItems: 'center',
-                shadowColor: '#000',
-                shadowOpacity: 1,
-                shadowOffset: {
-                  width: 0,
-                  height: 0,
-                },
-                shadowRadius: 20,
+        renderItem={({ item, index }) => {
+          return <View style={{
+            width, justifyContent: 'center', alignItems: 'center',
+            shadowColor: '#000',
+            shadowOpacity: 1,
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowRadius: 20,
+
           }}>
-            <Image source={{uri: item}} style={{
+            <ImageBackground borderRadius={15} source={item.image} style={{
               width: imageW,
               height: imageH,
               resizeMode: 'cover',
-              borderRadius: 16,
-            }}/>
+            }}>
+              <View style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: 15,
+
+              }}>
+
+                <View style={{
+                  flexDirection: 'row',
+                }}>
+                  <Icon name='arrow-back-ios' color={COLORS.grey} size={20} />
+                  <Icon name='arrow-back-ios' color={COLORS.grey} size={20} />
+                  <Icon name='arrow-back-ios' color={COLORS.grey} size={20} />
+                </View>
+                <Text style={{ color: COLORS.grey, fontSize: 15, fontWeight: 'bold' }}>Swipe Left</Text>
+              </View>
+              <TouchableOpacity onPress={() => handleNavigaion(item.navigate)} style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                flex: 1
+              }}>
+                <Text style={{
+                  color: COLORS.white,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  borderWidth: 1,
+                  borderColor: COLORS.white,
+                  borderRadius: 5,
+                  paddingVertical: 5,
+                  paddingHorizontal: 10,
+                  elevation: 10,
+                  backgroundColor: COLORS.gradientDark
+                }}>{item.text}</Text>
+              </TouchableOpacity>
+            </ImageBackground>
           </View>
         }}
       />

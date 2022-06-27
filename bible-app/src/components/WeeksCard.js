@@ -1,20 +1,21 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
-import COLORS from '../consts/colors'
-const WeeksCard = ({navigation, card, books}) => {
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
+import React from 'react';
+import COLORS from '../consts/colors';
+
+const width = Dimensions.get('screen').width
+const WeeksCard = ({ navigation, card, books }) => {
 
   const navigationHandler = (e) => {
     navigation.navigate('Details', card);
-
   }
   return (
-    <View style={{flex: 1, paddingHorizontal: 10, backgroundColor: COLORS.gradientDark}}>
+    <View style={{ paddingHorizontal: 10, width: width, backgroundColor: COLORS.gradientDark, alignItems: 'center' }}>
       <TouchableOpacity onPress={(e) => navigationHandler(e)}>
         <View style={style.cardText}>
           <View style={style.weeksCardNumber}>
-              <Text style={{fontSize: 25, color: COLORS.white}}>{books.number}</Text>
+            <Text style={{ fontSize: 25, color: COLORS.white }}>{books.number}</Text>
           </View>
-          <View style={{justifyContent: 'center', alignItems: 'flex-start'}}>
+          <View style={{ justifyContent: 'center', alignItems: 'flex-start', width: width }}>
             <Text style={style.cardTextPrimary}>{card.name}</Text>
             <Text style={style.cardTextSecondary}>{card.title}</Text>
           </View>
@@ -41,7 +42,8 @@ const style = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 4,
     elevation: 10,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    width: width
   },
 
   cardTextPrimary: {
@@ -53,6 +55,7 @@ const style = StyleSheet.create({
   cardTextSecondary: {
     color: COLORS.dark,
     fontSize: 16,
+    marginRight: 60
 
   }
 })
